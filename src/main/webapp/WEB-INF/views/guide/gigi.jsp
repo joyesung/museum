@@ -284,7 +284,7 @@
 		<form name="reqForm" method="post">
 			<article id="content">
 				<div id="divUcont_cont" class="display_none" style="display:block">
-						
+					<h2 class="depth2_title" style="opacity: 1;">관람시간</h2>	
 				</div>
 			</article>
 		</form>
