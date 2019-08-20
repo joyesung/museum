@@ -36,7 +36,7 @@
   		list-style: none;
   	}
   	#gnavigation li{
-  		padding-left: 60px; 
+  		padding-left: 40px; 
   		display: inline-block;
   		
   	}
@@ -118,15 +118,15 @@
 		text-align:center;
 	}
 	.img{
-		width:500px;
-		height:500px;
+		width:400px;
+		height:400px;
 		border:1px solid black;
 		display:inline-block;
 		margin:20px 20px 20px 0;		
 	}  
 	.img>img{
-		width:500px;
-		height:500px;
+		width:400px;
+		height:400px;
 	}
  </style>
  </head>

@@ -1,29 +1,211 @@
 package kr.green.museum;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
+
+import javax.mail.internet.MimeMessage;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import kr.green.museum.service.MemberService;
+import kr.green.museum.vo.MemberVO;
+
+import kr.green.museum.HomeController;
+
 
 /**
  * Handles requests for the application home page.
  */
 @Controller
 public class HomeController {
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
-	@RequestMapping(value= "/")
-	public ModelAndView openTilesView(ModelAndView mv) throws Exception{
-	    mv.setViewName("/main/home");
-	    mv.addObject("setHeader", "타일즈");
-	    return mv;
-
+	@Autowired
+	BCryptPasswordEncoder passwordEncoder;
+	@Autowired
+	MemberService memberservice;
+	@Autowired
+	private JavaMailSender mailSender;
+	
+	 
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public ModelAndView home(ModelAndView mv) {
+		logger.info("메인페이지 실행");
+		mv.setViewName("/main/home");
+		return mv;
 	}
-	
+	@RequestMapping(value = "/signup", method = RequestMethod.GET)
+	public String signupGet(Model model, String uuid) {
+		logger.info("회원가입페이지 실행");
+		
+		
+		return "/main/signup";
+	}
+	@RequestMapping(value = "/signup", method = RequestMethod.POST)
+	public String signupPost(MemberVO mvo) {
+		logger.info("회원가입 진행중");
+		//회원가입이 진행되어야함
+		if(memberservice.signup(mvo))
+			return "redirect:/";
+		else
+			return "redirect:/signup";
+	}
+	@RequestMapping(value="/signin", method=RequestMethod.GET)
+	public ModelAndView signinGet(ModelAndView mv) {
+		logger.info("로그페이지 실행");
+		mv.setViewName("/main/signin");
+		return mv;
+	}
+	@RequestMapping(value="/signin", method=RequestMethod.POST)
+	public String signinPost(Model model, MemberVO mvo) {
+		logger.info("로그인 진행중");
+		System.out.println(mvo);
+		MemberVO user = memberservice.signin(mvo);//출력했을 때 mvo의 정보가 출력되는지 확인
+		if(user != null) { //멤버서비스의 사인인의 정보 mvo를 읽어서 로그인되는지 안되는지 확인
+			model.addAttribute("user", user);
+			return "redirect:/";
+		}
+		return "redirect:/signin";
+	}
+	@RequestMapping(value="/member/modify", method =RequestMethod.GET)
+	public String membermodifyGet() {
+		logger.info("회원정보수정페이지 실행");
+			
+		
+		return "member/modify";
+	}
+	@RequestMapping(value="/member/modify", method =RequestMethod.POST)
+	public String membermodifyPost(MemberVO modifyvo, String oldPw) {
+		logger.info("회원정보수정 진행중");
+		System.out.println(modifyvo);		
+		if(memberservice.modify(modifyvo,oldPw)) {
+			return "redirect:/";
+		}
+		return "redirect:/member/modify";
+	}
+	@RequestMapping(value="/signout")
+	public String signout(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		session.removeAttribute("user");
+		return "redirect:/";
+	}
+	@RequestMapping(value ="/dup")
+	@ResponseBody
+	public Map<Object, Object> idcheck(@RequestBody String id){
+
+	    Map<Object, Object> map = new HashMap<Object, Object>();
+	    //변수 id에 저장된 아이디가 회원 아이디인지 아닌지 확인하여 ismember변수에
+	    //담아 보낸다.
+	    boolean isMember = memberservice.isMember(id);
+	    map.put("isMember", isMember );
+	    return map;
+	}
+	// mailSending 코드
+		@RequestMapping(value = "/mail/mailSending")
+		public String mailSending(HttpServletRequest request) {
+
+		    String setfrom = "stajun@naver.com";//의미없는것         
+		    String tomail  = request.getParameter("tomail");     // 받는 사람 이메일
+		    String title   = request.getParameter("title");      // 제목
+		    String content = request.getParameter("content");    // 내용
+
+		    try {
+		        MimeMessage message = mailSender.createMimeMessage();
+		        MimeMessageHelper messageHelper 
+		            = new MimeMessageHelper(message, true, "UTF-8");
+
+		        messageHelper.setFrom(setfrom);  // 보내는사람 생략하거나 하면 정상작동을 안함
+		        messageHelper.setTo(tomail);     // 받는사람 이메일
+		        messageHelper.setSubject(title); // 메일제목은 생략이 가능하다
+		        messageHelper.setText(content);  // 메일 내용
+
+		        mailSender.send(message);
+		    } catch(Exception e){
+		        System.out.println(e);
+		    }
+
+		    return "redirect:/mail/mailForm";
+		}
+		@RequestMapping(value = "/password/find")
+		public String passwordFind() {
+
+		    return "member/find";
+		}
+		@RequestMapping(value = "/checkemail")
+		@ResponseBody
+		public Map<Object, Object> emailcheck(@RequestBody String str){
+
+		    Map<Object, Object> map = new HashMap<Object, Object>();
+		   
+		    String [] arr = new String [2];
+		    arr = str.split("&");//문자 나누기
+		    String id = arr[0];
+		    String email = "";
+		    try {
+				email = URLDecoder.decode(arr[1],"UTF-8");
+			} catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		    id = memberservice.getVal(id);
+		    email = memberservice.getVal(email);
+		    
+		   boolean isOk = memberservice.checkMember(id,email);
+		   map.put("isOk",isOk);
+		    
+		    return map;
+		}
+		@RequestMapping(value = "/password/send")
+		public String passwordsend(String id, String email) {
+			//비밀번호 생성
+			String newPw = memberservice.createPw();
+			//생성된 비밀번호 DB에 저장
+			memberservice.modify(id,email,newPw);
+			//이메일 발송
+			String title = "변경된 비밀번호 입니다.";
+			String contents = "변경된 비밀번호입니다.\n"+newPw+"\n";
+			memberservice.sendMail(email,title,contents);
+		    return "send";
+		}
+		@RequestMapping(value= {"/test/home","/test/home.do"})
+	    public ModelAndView openTilesView(ModelAndView mv) throws Exception{
+	        mv.setViewName("/test/home");
+	        mv.addObject("setHeader", "타일즈");
+	        return mv;
+	    }
+		@RequestMapping(value="/guide/gu", method =RequestMethod.GET)
+		public ModelAndView guGet(ModelAndView mv) {
+			logger.info("관람시유의사항 페이지실행");
+			mv.setViewName("/guide/gu");
+			return mv;
+			
+		}
+		@RequestMapping(value="/guide/gigi", method =RequestMethod.GET)
+		public ModelAndView gigiGet(ModelAndView mv) {
+			logger.info("안내페이지실행");
+			mv.setViewName("/guide/gigi");
+			return mv;
+			
+		}
+		
+		
 }
