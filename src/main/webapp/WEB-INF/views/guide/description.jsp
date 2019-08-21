@@ -207,6 +207,74 @@
 	    font-size: 0.1em;
 	    overflow: hidden;
 	}
+	caption {
+	    display: table-caption;
+	    text-align: -webkit-center;
+	}
+	thead {
+	    display: table-header-group;
+	    vertical-align: middle;
+	    border-color: inherit;
+	}
+	tr {
+	    display: table-row;
+	    vertical-align: inherit;
+	    border-color: inherit;
+	}
+	.tstyle_list th:first-child, .tstyle_list td:first-child {
+	    border-left: none;
+	}
+	.tstyle_list th {
+	    padding: 7px 9px;
+	    background: #f6f6f6;   
+	    border-bottom: solid 1px #adadad;
+	    color: #333;
+	}
+	table th {
+	    white-space: nowrap;
+	    text-align: center;
+	}
+	th {
+	    display: table-cell;
+	    vertical-align: inherit;
+	    font-weight: bold;  
+    }
+    tbody {
+	    display: table-row-group;
+	    vertical-align: middle;
+	    border-color: inherit;
+	}
+	.tstyle_list th:first-child, .tstyle_list td:first-child {
+	    border-left: none;
+	}
+	.tstyle_list td {
+	    padding: 12px 9px;
+	    border-bottom: solid 1px #ddd;
+	    text-align: center;
+	}
+	table td {
+	    white-space: normal;
+	    word-break: break-all;
+	}
+	td {
+	    display: table-cell;
+	    vertical-align: inherit;
+	}
+	.tstyle_list td {
+	    padding: 12px 9px;
+	    border-left: solid 1px #e9e1d7;
+	    border-bottom: solid 1px #ddd;
+	    text-align: center;
+	}
+	.tstyle_list td {
+	    text-align: center;
+	} 
+	td style p{
+		text-align: center;   
+	}
+	.table_bottomTxt {
+    	margin-top: 10px;
+	}  
  </style>
  </head>
 <body>
@@ -332,8 +400,61 @@
 						<li>문의: 전시해설안내(☎043-225-2111), 큐레이터와의 대화 안내(☎043-225-2111)</li>
 					</ul>
 					<table class="tstyle_list" style="opacity: 1;">
-						<caption>국립고구려박물관 정기 전시해설 코스, 해설자, 모이는 곳, 해설시간안내</caption>  
+						<caption>국립고구려박물관 정기 전시해설 코스, 해설자, 모이는 곳, 해설시간안내</caption>
+						<thead>
+							<tr>
+								<th scope="col">
+									해설코스
+								</th>
+								<th scope="col">
+									해설자
+								</th>
+								<th scope="col">
+									모이는 곳
+								</th>
+								<th colspan="2" scope="col">
+									해설일시
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>상설전시실</td>
+								<td>자원봉사자</td>
+								<td>상설전시관 중앙홀</td>
+								<td style>
+									<br>
+								</td>
+								<td style>
+									<p>
+											화~일10:30 / 13:30 
+										<span style="color: rgb(255, 0, 0)">&nbsp;</span>
+									</p>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									문화가 있는날
+									<br>
+									큐레이터와의 대화
+								</td>
+								<td>
+									국립고구려박물관
+									학예연구사
+								</td>
+								<td>
+									상설전시관 중앙홀
+								</td>
+								<td>
+									1월~12월 마지막 주 수요일
+								</td>
+								<td>
+									16:00
+								</td>
+							</tr>
+						</tbody>  
 					</table>
+					<p class="table_bottomTxt" style="opacity: 1;">※ 본 프로그램은 박물관 사정에 따라 변경될 수 있습니다.</p>
 				</div>	
 			</article>
 		</form>

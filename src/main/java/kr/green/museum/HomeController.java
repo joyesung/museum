@@ -213,5 +213,12 @@ public class HomeController {
 			return mv;
 			
 		}
+		@RequestMapping(value="/guide/directions", method =RequestMethod.GET)
+		public ModelAndView directionsGet(ModelAndView mv) {
+			logger.info("전시해설페이지실행");
+			mv.setViewName("/guide/directions");
+			return mv;
+			
+		}
 		
 }
