@@ -206,6 +206,12 @@ public class HomeController {
 			return mv;
 			
 		}
-		
+		@RequestMapping(value="/guide/description", method =RequestMethod.GET)
+		public ModelAndView descriptionGet(ModelAndView mv) {
+			logger.info("전시해설페이지실행");
+			mv.setViewName("/guide/description");
+			return mv;
+			
+		}
 		
 }
