@@ -222,10 +222,31 @@ public class HomeController {
 		}
 		@RequestMapping(value="/guide/map", method =RequestMethod.GET)
 		public ModelAndView mapGet(ModelAndView mv) {
-			logger.info("전시해설페이지실행");
+			logger.info("지도페이지");
 			mv.setViewName("/guide/map");
 			return mv;
 			
 		}
-		
+		@RequestMapping(value="/guide/introduction", method =RequestMethod.GET)
+		public ModelAndView introductionGet(ModelAndView mv) {
+			logger.info("박물관소개페이지실행");
+			mv.setViewName("/guide/introduction");
+			return mv;
+			
+		}
+		@RequestMapping(value="/guide/facility", method =RequestMethod.GET)
+		public ModelAndView facilityGet(ModelAndView mv) {
+			logger.info("시설소개페이지");
+			mv.setViewName("/guide/facility");
+			return mv;
+			
+		}
+		@RequestMapping(value="/exhibition/permanent", method =RequestMethod.GET)
+		public ModelAndView permanentGet(ModelAndView mv) {
+			logger.info("시설소개페이지");
+			mv.setViewName("/exhibition/permanent");
+			return mv;
+			
+		}
 }
+

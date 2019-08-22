@@ -3,15 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8"/>
-	<title>Kakao 지도 시작하기</title>
-	
+<meta charset="UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
-	
-	
-	<script>
-		
-	</script>
+
 </body>
 </html>
