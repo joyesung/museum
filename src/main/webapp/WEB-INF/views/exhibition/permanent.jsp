@@ -15,13 +15,12 @@
 			p.find('.cts39_ml_cont img').slideToggle();
 			toggleDisplay(p.find('.cts39_curtain'));
 			toggleFontSize(p.find('.cts39_ml_cont'));
-			
+			$('.pos_none').removeClass('pos_none');
 		})
 		$('.pos_r button').click(function(){
 			toggleDisplay($(this).parents('li').find('.cts39_curtain'));
 			$(this).prev().slideToggle();
-			toggleFontSize($(this).parents('li').find('.cts39_ml_cont'));
-			
+			toggleFontSize($(this).parents('li').find('.cts39_ml_cont'));			
 		})
 		
 	})
@@ -281,6 +280,9 @@
 	.closeimg{
 		display: none;
 	}
+	.pos_none{
+		display:none;
+	}
  </style>
  </head>          
 <body>
@@ -424,7 +426,7 @@
 				<button type="button">1.로비</button>
 				<div class="cts39_curtain"></div>
 				<div class="cts39_ml_cont" >
-					<div class="pos_r">
+					<div class="pos_r pos_none">
 						<img id="ab" alt="로비사진" src="<%=request.getContextPath()%>/resources/img/robi.jpg" style="display: none;">
 						<button id="bb" type="button" title="레이어닫기">
 							<img  alt="X" src="<%=request.getContextPath()%>/resources/img/close.png" class="closeimg">
@@ -437,7 +439,7 @@
 				<button type="button">2.선사문화실</button>
 				<div class="cts39_curtain"></div>
 				<div class="cts39_ml_cont" >
-					<div class="pos_r">
+					<div class="pos_r pos_none">
 						<img id="ac" alt="선사문화실 사진" src="<%=request.getContextPath()%>/resources/img/mon.jpg" style="display: none;">
 						<button id="cc" type="button" title="레이어닫기">
 							<img id="b" alt="X" src="<%=request.getContextPath()%>/resources/img/close.png" style="display: none;">
@@ -450,7 +452,7 @@
 				<button type="button">3.고구려/고대문화실</button>
 				<div class="cts39_curtain"></div>
 				<div class="cts39_ml_cont" >
-					<div class="pos_r">
+					<div class="pos_r pos_none">
 						<img id="ad" alt="고구려/고대문화실 사진" src="<%=request.getContextPath()%>/resources/img/gudai.jpg" style="display: none;">
 						<button id="dd" type="button" title="레이어닫기">
 							<img id="c" alt="X" src="<%=request.getContextPath()%>/resources/img/close.png" style="display: none;">
@@ -463,7 +465,7 @@
 				<button type="button">4.고려문화실</button>
 				<div class="cts39_curtain"></div>
 				<div class="cts39_ml_cont">
-					<div class="pos_r">
+					<div class="pos_r pos_none">
 						<img id="ae" alt="고려문화실 사진" src="<%=request.getContextPath()%>/resources/img/zh.jpg" style="display: none;">
 						<button id="ee" type="button" title="레이어닫기">
 							<img id="d" alt="X" src="<%=request.getContextPath()%>/resources/img/close.png" style="display: none;">
@@ -476,7 +478,7 @@
 				<button type="button">5.조선문화실</button>
 				<div class="cts39_curtain"></div>
 				<div class="cts39_ml_cont" >
-					<div class="pos_r">
+					<div class="pos_r pos_none">
 						<img id="af" alt="조선문화실 사진" src="<%=request.getContextPath()%>/resources/img/gen.jpg" style="display: none;">
 						<button id="ff" type="button" title="레이어닫기">
 							<img id="e" alt="X" src="<%=request.getContextPath()%>/resources/img/close.png" style="display: none;">

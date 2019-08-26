@@ -247,6 +247,12 @@ public class HomeController {
 			mv.setViewName("/exhibition/permanent");
 			return mv;
 			
+		}@RequestMapping(value="/exhibition/special", method =RequestMethod.GET)
+		public ModelAndView specialGet(ModelAndView mv) {
+			logger.info("시설소개페이지");
+			mv.setViewName("/exhibition/special");
+			return mv;
+			
 		}
 }
 
