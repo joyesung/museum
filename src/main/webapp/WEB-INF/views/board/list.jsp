@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
 <head>
 <script type = "text/javascript" src="//code.jquery.com//jquery-3.4.1.js"></script>
 <script type="text/javascript">
@@ -11,8 +12,7 @@
 		})
 	})
 </script>
-<style type="text/css">
-	<style type="text/css">
+ <style type="text/css">
  	body{
  		margin: 0;
  		padding: 0;
@@ -114,108 +114,14 @@
 	#divAllmenu{
 		display: none;
 	}
-	
-	body {
-	    margin: 0;
-	    padding: 0;
-	    color: #636363;
-	    font-size: 87.5%;
-	    line-height: 1.6;
-	    font-family: Malgun Gothic, '맑은 고딕', Dotum, '돋움', Gulim, '굴림', Tahoma, Verdana, AppleGothic, UnDotum, sans-serif;
-	}
-	 .stitle{
-		padding: 26px 0 2px;
-	    border-top: solid 3px #555;
-	    color: #333;
-	    letter-spacing: -0.05em;
-	    text-align: center;
-	    font-size: 2.8em;
-	    overflow: hidden;
-	    
-	}
-	.page{
-	    padding-bottom: 38px;
-	    border-bottom: solid 1px #ddd;
-	    text-align: center;
-	    letter-spacing: -0.1em;
-	   
-    }
-	#content {
-	    position: relative;
-	    width: 1120px;
-	    margin: 0 auto;
-	    padding: 32px 39px 40px;
-	    border: 1px solid #ddd;
-	    border-top: none;
-	    overflow: hidden;
-	 }
-	 #divcont{
-	 	overflow: hidden;
-	 }
-	 .contentf{
-	     font-weight: bold;  
-	     margin-top: 1px;
-    	 padding-left: 18px;
-    	 text-align: left;      
-	 }
-	 p{
-	 	display: block;
-	    margin-block-start: 1em;
-	    margin-block-end: 1em;
-	    margin-inline-start: 0px;
-	    margin-inline-end: 0px;
-	 }
-	 .point01, .point01_bold {
-		color: #da3d00;
-		text-align: left;
-	 }
-	 h2 {
-	    font-size: 1.357em;
-	    letter-spacing: -0.1em;
-	    text-align: left;
-	 }  
-	 .depth2_title, .depth2_title02 {
-	    margin-top: 1px;     
-        padding-left: 18px;
-	    color: #333;
-	    text-align: left;
-	 }
-	 ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6 {
-	    margin: 0;
-	    padding: 0;
-	    list-style: none;
-	 }
-	 .lstyle_box, .lstyle_dot, .lstyle_normal {
-    	margin-left: 2px;
-	 }
-	 p.lstyle_box, .lstyle_box > li {
-	    margin-top: 1px;
-	    padding-left: 18px;
-	    background: url(../../../images/custom/kor/common/arrow_box.gif) no-repeat 0 7px;
-	    text-align: left;
-	 }
-	 li {
-	    display: list-item;
-	    text-align: -webkit-match-parent;
-	    text-align: left;
-	 }
-	 .iframe {
-	    width: 100%;
-	    margin-top: 20px;
-	    padding: 35px;
-	    border: solid 3px #dfdfdf;
-	    box-sizing: border-box;
-	    text-align: center;
-	 }
-	 .iframe iframe {
-	    width: 100%;
-	    margin: auto;
-	 }
-</style>
-</head>
-
-<body>
-<div>
+	.page-item .fas{
+			font-size:20px;
+		}
+	</style>
+ </style>
+ </head>
+ <body>
+	<div>
 		<div class="logowrap">
 			<nav class="mune-list">
 				<ul id="gnavigation">
@@ -316,39 +222,88 @@
 			</li>
 		</ul>
 	</article>
+	<div style="min-height: 561px">
 	<div>
-		<h1 class="stitle">관람시 유의사항</h1>
-		<h6 class="page">쾌적한 관람을 위해 관람시 유의사항을 알려드립니다.</h6>  
-	</div>
-	<article id="content">
-		<div id="divcont" class="display_none" style="display:block;">
-			<p class="contentf">
-				국립고구박물관은 우리 조상들의 얼과 땀이 고스란히 깃들어 있는 소중한 문화유산들이 보관, 전시되고 있는 시민들을 위한 공간입니다.
-				<br>
-				찾아주신 시민 모두가 편안하고 안락한 가운데 이용할 수 있도록 관람시 다음 사항을 지켜주시기 바랍니다.
-				<strong class="point01">관람시 다음 사항을 지켜주시길 바랍니다.</strong>
-			</p>
-				<br>
-				<h1 class="depth2_title" style="opacity:1;" >박물관 관람시 유의사항</h2>
-				<br>
-			<ul class="lstyle_box margin_info" style="opacity:1;">
-				<li>조용한 분위기를 지켜 질서 있게 관람해 주십시오</li>
-				<li>전시실 내에서 흡연, 음주 또는 음료, 과자 등 음식물을 드실 수 없습니다.</li>
-				<li>관리자의 허가 없이 플래시 등 조명이나 삼각대 등을 사용하여 사진을 찍을 수 없습니다.</li>
-				<li>허가되지 않은 전시품은 만질 수 없습니다.</li>
-				<li>박물관 내로 애완동물을 데리고 들어올 수 없습니다.</li>
-				<li>휴대폰은 무음 또는 진동으로 전환해 주십시오.</li>
-				<li>관람자가 전시품 및 박물관 시설물을 파괴하거나 훼손하였을 때에는 이에 상응하는 손해 배상을 하셔야합니다. </li>
-			</ul>
-			<h2 class="depth2_title" style="opacity: 1;">박물관 관람예절 동영상</h2>
-			<div class="iframe" style="opacity: 1;">
-				<iframe width="516" height="315" title="박물관 관람예절 동영상" src="https://www.youtube.com/embed/HvBP0vVFk48?rel=0" frameborder="0" scrolling="auto" allowfullscreen allow="autoplay; encrypted-media">
-				</iframe>
-				
+		<form action="<%=request.getContextPath()%>/board/list" method="get" class="row mb-2 mt-2">
+			<div class="form-group col-2 mb-0">
+			  <select class="form-control" name="type">
+			    <option value="0" <c:if test="${pageMaker.criteria.type == 0 }">selected</c:if> >선택</option>
+			    <option value="1" <c:if test="${pageMaker.criteria.type == 1 }">selected</c:if>>제목</option>
+			    <option value="2" <c:if test="${pageMaker.criteria.type == 2 }">selected</c:if>>작성자</option>
+			    <option value="3" <c:if test="${pageMaker.criteria.type == 3 }">selected</c:if>>내용</option>
+			  </select>
 			</div>
+			<div class="form-group col-4 mb-0">
+			  <input type="text" class="form-control" name="search" value="${pageMaker.criteria.search}">
+			</div>
+			<button type="submit" class="btn btn-outline-info">검색</button>
+		</form>
+	</div>
+	<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>작성일</th>
+        <th>조회수</th>
+      </tr>
+    </thead>
+    <tbody>
+    	<c:if test="${list.size() ne 0}">
+    		<c:forEach items="${list}" var="board">
+		      <tr>
+		        <td>${board.num }</td>
+		        <td>
+			        <a href="<%=request.getContextPath()%>/board/display?num=${board.num}&page=${pageMaker.criteria.page}&type=${pageMaker.criteria.type}&search=${pageMaker.criteria.search}">
+			        	${board.title}
+		        	</a>
+	        	</td>
+		        <td>${board.writer}</td>
+		        <td>${board.registeredUntilDay}</td>
+		        <td>${board.views }</td>
+		      </tr>
+	      </c:forEach>
+      </c:if>
+      <c:if test="${list.size() eq 0}">
+	      <tr>
+	        <td colspan="5" class="">게시글이 존재하지 않습니다.</td>
+	      </tr>
+      </c:if>
+    </tbody>
+  </table>
+  <ul class="pagination" style="justify-content: center;">
+    <c:if test="${pageMaker.prev}">
+			<li class="page-item">
+			    <a class="page-link" href="<%=request.getContextPath()%>/board/list?page=${pageMaker.startPage-1}&type=${pageMaker.criteria.type}&search=${pageMaker.criteria.search}"><i class="fas fa-chevron-left"></i></a>
+			</li>
+    </c:if>
+    <c:forEach begin="${pageMaker.startPage }" end="${pageMaker.endPage}" var="index">
+    	<c:choose>
+    	<c:when test="${pageMaker.criteria.page != index }">
+				<li class="page-item">
+				    <a class="page-link" href="<%=request.getContextPath()%>/board/list?page=${index}&type=${pageMaker.criteria.type}&search=${pageMaker.criteria.search}">${index}</a>
+				</li>
+			</c:when>
+			<c:otherwise>
+				<li class="page-item active">
+				    <a class="page-link" href="<%=request.getContextPath()%>/board/list?page=${index}&type=${pageMaker.criteria.type}&search=${pageMaker.criteria.search}">${index}</a>
+				</li>
+			</c:otherwise>
+			</c:choose>
+    </c:forEach>
+    <c:if test="${pageMaker.next}">
+			<li class="page-item">
+			    <a class="page-link" href="<%=request.getContextPath()%>/board/list?page=${pageMaker.endPage+1}&type=${pageMaker.criteria.type}&search=${pageMaker.criteria.search}"><i class="fas fa-chevron-right"></i></a>
+			</li>
+    </c:if>
+	</ul>
+	<c:if test="${user ne null}">
+		<div>
+			<a href="<%=request.getContextPath()%>/board/register"><button class="btn btn-outline-info">등록</button></a>
 		</div>
-	
-	</article>
-	
-
-</body>
+	</c:if>
+</div>
+</body>		
+		
+ 

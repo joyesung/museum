@@ -1,9 +1,12 @@
 package kr.green.museum.service;
 
 import kr.green.museum.service.PageMakerService;
+
+import org.springframework.stereotype.Service;
+
 import kr.green.museum.pagination.Criteria;
 import kr.green.museum.pagination.PageMaker;
-
+@Service
 public class PageMakerServiceImp implements PageMakerService {
 	@Override
 	public PageMaker getPageMaker(int displayPageNum, Criteria cri, int totalCount) {
