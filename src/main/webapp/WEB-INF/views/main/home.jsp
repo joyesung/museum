@@ -195,7 +195,7 @@
 					<a>소장품검색</a>
 				</li>
 				<li>
-					<a>발간자료</a>
+					<a href="<%=request.getContextPath()%>/relic/published">발간자료</a>
 				</li>
 				<li>
 					<a href="<%=request.getContextPath()%>/academic/science">보존과학</a>
@@ -220,6 +220,7 @@
 					<a>교육자료</a>
 				</li>
 				</ul>
+				
 			</li>
 		</ul>
 	</article>

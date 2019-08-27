@@ -276,5 +276,12 @@ public class HomeController {
 			return mv;
 			
 		}
+		@RequestMapping(value="/relic/published", method =RequestMethod.GET)
+		public ModelAndView publishedGet(ModelAndView mv) {
+			logger.info("시설소개페이지");
+			mv.setViewName("/relic/published");
+			return mv;
+			
+		}
 }
 
