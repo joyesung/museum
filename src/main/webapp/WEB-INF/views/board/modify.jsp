@@ -113,7 +113,7 @@
 <div style="min-height: 561px">
 	<h1>게시글 수정</h1>
 	<form method="post" action="<%=request.getContextPath()%>/board/modify" enctype="multipart/form-data">
-		<input type="hidden" value="${board.num}" name="num">
+		<input type="hidden" value="${board.viewnum}" name="viewnum">
 		<div class="form-group">
 		  <input type="text" class="form-control" name="title" value="${board.title }">
 		</div>
@@ -123,14 +123,14 @@
 		<textarea  id="summernote" name="contents">${board.contents}</textarea>
 		<div class="form-group">
 		  <label>첨부파일 : </label>
-		  <c:if test="${board.fileName ne '' }">
-			  <a href="<%=request.getContextPath()%>/board/download?fileName=${board.file}" id="fileLink">
-			  	${board.fileName}
+		  <c:if test="${board.file ne '' }">
+			  <a href="<%=request.getContextPath()%>/board/download?file=${board.file}" id="fileLink">
+			  	${board.file}
 			  </a>
 			  <input type="hidden" name="file" value="${board.file}">
 			  <i class="fas fa-times close"></i>
 		  </c:if>
-		  <c:if test="${board.fileName eq '' }">
+		  <c:if test="${board.file eq '' }">
 		  	없음
 		  </c:if>
 		</div>
@@ -213,7 +213,7 @@
 				<a>게시판</a>
 				<ul class="depth2" id="ulAllSubmeuLv2_4">
 				<li>
-					<a href="<%=request.getContextPath()%>/board/list">공지사항/게시판</a>
+					<a href="<%=request.getContextPath()%>/board/list">공지사항/게시판</a> 
 				</li>
 				</ul>
 			</li>

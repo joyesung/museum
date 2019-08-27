@@ -135,20 +135,20 @@
 	</div>
 	<div class="form-group">
 	  <label>첨부파일 : </label>
-	  <c:if test="${board.fileName ne '' }">
-		  <a href="<%=request.getContextPath()%>/board/download?fileName=${board.file}">
-		  	${board.fileName}
+	  <c:if test="${board.file ne '' }">
+		  <a href="<%=request.getContextPath()%>/board/download?file=${board.file}">
+		  	${board.file}
 		  </a>
 	  </c:if>
-	  <c:if test="${board.fileName eq '' }">
+	  <c:if test="${board.file eq '' }">
 	  	없음
 	  </c:if>
 	</div>
 	<div>
 		<a href="<%=request.getContextPath()%>/board/list?page=${cri.page}&type=${cri.type}&search=${cri.search}"><button class="btn btn-outline-info">목록</button></a>
 		<c:if test="${user.id eq board.writer}">
-			<a href="<%=request.getContextPath()%>/board/modify?num=${board.num}&page=${cri.page}&type=${cri.type}&search=${cri.search}"><button class="btn btn-outline-info">수정</button></a>
-			<a href="<%=request.getContextPath()%>/board/delete?num=${board.num}"><button class="btn btn-outline-info">삭제</button></a>
+			<a href="<%=request.getContextPath()%>/board/modify?viewnum=${board.viewnum}&page=${cri.page}&type=${cri.type}&search=${cri.search}"><button class="btn btn-outline-info">수정</button></a>
+			<a href="<%=request.getContextPath()%>/board/delete?viewnum=${board.viewnum}"><button class="btn btn-outline-info">삭제</button></a>
 		</c:if>
 	</div>
 </div>

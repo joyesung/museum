@@ -244,7 +244,7 @@
     	<c:if test="${list.size() ne 0}">
     		<c:forEach items="${list}" var="board">
 		      <tr>
-		        <td>${board.viewnum }</td>
+		        <td>${board.viewnum}</td>
 		        <td>
 			        <a href="<%=request.getContextPath()%>/board/display?viewnum=${board.viewnum}&page=${pageMaker.criteria.page}&type=${pageMaker.criteria.type}&search=${pageMaker.criteria.search}">
 			        	${board.title}
