@@ -14,7 +14,7 @@ public interface BoardDAO {
 
 	public void insertBoard(@Param("board")BoardVO board);
 
-	public BoardVO selectBoard(@Param("num")Integer num);
+	public BoardVO selectBoard(@Param("viewnum")Integer viewnum);
 
 	public void updateBoard(@Param("board")BoardVO board);
 }

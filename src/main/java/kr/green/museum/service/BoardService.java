@@ -14,13 +14,13 @@ public interface BoardService {
 
 	public void registerBoard(BoardVO bVo);
 
-	public BoardVO getBoard(Integer num);
+	public BoardVO getBoard(Integer viewnum);
 
 	public void modifyBoard(BoardVO bVo);
 
-	public boolean isWriter(Integer num, HttpServletRequest r);
+	public boolean isWriter(Integer viewnum, HttpServletRequest r);
 
-	public void deleteBoard(Integer num);
+	public void deleteBoard(Integer viewnum);
 
 	public BoardVO increaseViews(BoardVO board);
 }

@@ -353,16 +353,7 @@
 					<a>발간자료</a>
 				</li>
 				<li>
-					<a>학술자료</a>
-				</li>
-				<li>
-					<a>전시도록</a>
-				</li>
-				<li>
-					<a>발굴보고서</a>
-				</li>
-				<li>
-					<a>보존과학</a>
+					<a href="<%=request.getContextPath()%>/academic/science">보존과학</a>
 				</li>
 				</ul>	
 			</li>

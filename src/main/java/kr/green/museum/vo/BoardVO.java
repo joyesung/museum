@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class BoardVO {
-	private int num;
+	private int viewnum;
 	private String title;
 	private String contents;
 	private String writer;
@@ -12,12 +12,11 @@ public class BoardVO {
 	private String file;
 	private Date registered;
 	private int views;
-	
-	public int getNum() {
-		return num;
+	public int getViewnum() {
+		return viewnum;
 	}
-	public void setNum(int num) {
-		this.num = num;
+	public void setViewnum(int viewnum) {
+		this.viewnum = viewnum;
 	}
 	public String getTitle() {
 		return title;
@@ -46,24 +45,11 @@ public class BoardVO {
 	public String getFile() {
 		return file;
 	}
-	public String getFileName() {
-		if(file == null)
-			return "";
-		int index = file.indexOf("_");
-		if(index == -1)
-			return "";
-		return file.substring(index+1);
-	}
 	public void setFile(String file) {
 		this.file = file;
 	}
-	public String getRegistered() {
-		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		return f.format(registered);
-	}
-	public String getRegisteredUntilDay() {
-		SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
-		return f.format(registered);
+	public Date getRegistered() {
+		return registered;
 	}
 	public void setRegistered(Date registered) {
 		this.registered = registered;
@@ -76,9 +62,10 @@ public class BoardVO {
 	}
 	@Override
 	public String toString() {
-		return "BoardVO [num=" + num + ", title=" + title + ", contents=" + contents + ", writer=" + writer + ", valid="
-				+ valid + ", file=" + file + ", registered=" + registered + ", views=" + views + "]";
+		return "BoardVO [viewnum=" + viewnum + ", title=" + title + ", contents=" + contents + ", writer=" + writer
+				+ ", valid=" + valid + ", file=" + file + ", registered=" + registered + ", views=" + views + "]";
 	}
+	
 	
 	
 }

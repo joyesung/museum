@@ -269,6 +269,12 @@ public class HomeController {
 			return mv;
 			
 		}
-		
+		@RequestMapping(value="/academic/science", method =RequestMethod.GET)
+		public ModelAndView scienceGet(ModelAndView mv) {
+			logger.info("시설소개페이지");
+			mv.setViewName("/academic/science");
+			return mv;
+			
+		}
 }
 

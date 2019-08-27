@@ -186,18 +186,9 @@
 				</li>
 				<li>
 					<a>발간자료</a>
-				</li>
+				</li> 
 				<li>
-					<a>학술자료</a>
-				</li>
-				<li>
-					<a>전시도록</a>
-				</li>
-				<li>
-					<a>발굴보고서</a>
-				</li>
-				<li>
-					<a>보존과학</a>
+					<a href="<%=request.getContextPath()%>/academic/science">보존과학</a>
 				</li>
 				</ul>	
 			</li>
@@ -253,15 +244,15 @@
     	<c:if test="${list.size() ne 0}">
     		<c:forEach items="${list}" var="board">
 		      <tr>
-		        <td>${board.num }</td>
+		        <td>${board.viewnum }</td>
 		        <td>
-			        <a href="<%=request.getContextPath()%>/board/display?num=${board.num}&page=${pageMaker.criteria.page}&type=${pageMaker.criteria.type}&search=${pageMaker.criteria.search}">
+			        <a href="<%=request.getContextPath()%>/board/display?viewnum=${board.viewnum}&page=${pageMaker.criteria.page}&type=${pageMaker.criteria.type}&search=${pageMaker.criteria.search}">
 			        	${board.title}
-		        	</a>
+		        	</a>  
 	        	</td>
 		        <td>${board.writer}</td>
-		        <td>${board.registeredUntilDay}</td>
-		        <td>${board.views }</td>
+		        <td>${board.registered}</td>
+		        <td>${board.views}</td>
 		      </tr>
 	      </c:forEach>
       </c:if>
@@ -303,7 +294,5 @@
 			<a href="<%=request.getContextPath()%>/board/register"><button class="btn btn-outline-info">등록</button></a>
 		</div>
 	</c:if>
-</div>
-</body>		
-		
+</div>		
  

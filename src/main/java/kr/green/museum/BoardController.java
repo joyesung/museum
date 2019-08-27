@@ -65,9 +65,9 @@ public class BoardController {
 	    return "redirect:/board/list";
 	}
 	@RequestMapping(value="/board/display",method=RequestMethod.GET)
-	public ModelAndView boardDisplayGet(ModelAndView mv,Integer num, Criteria cri){
+	public ModelAndView boardDisplayGet(ModelAndView mv,Integer viewnum, Criteria cri){
 		
-		BoardVO board = boardService.getBoard(num);
+		BoardVO board = boardService.getBoard(viewnum);
 		board = boardService.increaseViews(board);
 		mv.setViewName("/board/display");
 		mv.addObject("board",board);
@@ -75,11 +75,11 @@ public class BoardController {
 	    return mv;
 	}
 	@RequestMapping(value="/board/modify",method=RequestMethod.GET)
-	public ModelAndView boardModifyGet(ModelAndView mv,Integer num, Criteria cri,HttpServletRequest r){
-		boolean isWriter = boardService.isWriter(num,r);
+	public ModelAndView boardModifyGet(ModelAndView mv,Integer viewnum, Criteria cri,HttpServletRequest r){
+		boolean isWriter = boardService.isWriter(viewnum,r);
 		BoardVO board = null;
 		if(isWriter) {
-			board = boardService.getBoard(num);
+			board = boardService.getBoard(viewnum);
 			mv.setViewName("/board/modify");
 		}else {
 			mv.setViewName("redirect:/board/list");
@@ -99,9 +99,9 @@ public class BoardController {
 	    return "redirect:/board/list";
 	}
 	@RequestMapping(value="/board/delete",method=RequestMethod.GET)
-	public ModelAndView boardDeleteGet(ModelAndView mv,Integer num,HttpServletRequest r){
-		if(boardService.isWriter(num, r))
-			boardService.deleteBoard(num);
+	public ModelAndView boardDeleteGet(ModelAndView mv,Integer viewnum,HttpServletRequest r){
+		if(boardService.isWriter(viewnum, r))
+			boardService.deleteBoard(viewnum);
 		mv.setViewName("redirect:/board/list");
 		return mv;
 	}
