@@ -354,7 +354,7 @@
 	}
 	
 	
-	.display_none{
+	.display_none	{
 		display: none;
 	}
  </style>

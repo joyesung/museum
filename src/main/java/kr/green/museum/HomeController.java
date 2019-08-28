@@ -3,6 +3,7 @@ package kr.green.museum;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
@@ -26,10 +27,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.green.museum.service.AcademicService;
 import kr.green.museum.service.MemberService;
+import kr.green.museum.vo.AcademicVO;
 import kr.green.museum.vo.MemberVO;
 
 import kr.green.museum.HomeController;
+import kr.green.museum.pagination.Criteria;
 
 
 /**
@@ -45,6 +49,8 @@ public class HomeController {
 	MemberService memberservice;
 	@Autowired
 	private JavaMailSender mailSender;
+	@Autowired
+	AcademicService academicservice;
 	
 	 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -277,9 +283,25 @@ public class HomeController {
 			
 		}
 		@RequestMapping(value="/relic/published", method =RequestMethod.GET)
-		public ModelAndView publishedGet(ModelAndView mv) {
-			logger.info("시설소개페이지");
+		public ModelAndView relicpublishedGet(ModelAndView mv, Criteria cri) {
+			logger.info("전시도록페이지");
+			//academic테이블에서 페이지에 해당하는 도서 리스트를 가져옴
+			String actype = "전시도록";
+			ArrayList<AcademicVO> published = academicservice.getrelicPublished(cri,actype);
+			mv.addObject("published",published);
 			mv.setViewName("/relic/published");
+			System.out.println(published);
+			return mv;
+			
+		}
+		@RequestMapping(value="/relic/display", method =RequestMethod.GET)
+		public ModelAndView displayGet(ModelAndView mv, Criteria cri,Integer acnum) {
+			logger.info("전시도록 게시글 하나씩 보이게 설정");
+			
+			AcademicVO display = academicservice.getrelicdiplay( acnum);
+			mv.setViewName("/relic/display");
+			mv.addObject("board",display);
+			System.out.println(display);
 			return mv;
 			
 		}

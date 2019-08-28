@@ -5,12 +5,36 @@
 <head>
 <script type = "text/javascript" src="//code.jquery.com//jquery-3.4.1.js"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
+$(document).ready(function(){
 		//더보기 또는 접기 버튼 클릭하면 
 		$('.fas.fa-bars').click(function(){
 			$('#divAllmenu').slideToggle();
 		})
-	})
+		$('.link01').click(function(){
+			$('.ab').removeClass('display_none');	//보여줄 태그  
+			$('.ac').addClass('display_none');
+			$('.ad').addClass('display_none');
+		})
+		$('.link02').click(function(){
+			$('.ac').removeClass('display_none');	//보여줄 태그
+			$('.ab').addClass('display_none');
+			$('.ad').addClass('display_none');
+		})
+		$('.link03').click(function(){
+			console.log('123');
+			$('.ad').removeClass('display_none');	//보여줄 태그
+			$('.ab').addClass('display_none');
+			$('.ac').addClass('display_none');
+		})
+		
+		$('#spanListSubject0').click(function(){
+			$('.ab').removeClass('display_none');	//보여줄 태그  
+			$('.ac').addClass('display_none');
+			$('.ad').addClass('display_none');
+		})
+		
+		$('#link01').click();
+});		//레디
 </script>
  <style type="text/css">
  	body{
@@ -238,6 +262,192 @@
 	    border-collapse: collapse;
 	    border: none;
 	}
+	.tstyle_list, .standard_detail {
+	    clear: both;
+	    width: 100%;
+	    border-top: solid 2px #adadad;
+	    border-bottom: solid 1px #adadad;
+	    table-layout: fixed;
+	}
+	caption {
+	    width: 100%;
+	    height: 1px;
+	    line-height: 0;
+	    color: transparent;
+	    font-size: 0.1em;
+	    overflow: hidden;
+	}
+	caption {
+	    display: table-caption;
+	    text-align: -webkit-center;
+	}
+	colgroup {
+	    display: table-column-group;
+	}
+	col {
+	    display: table-column;
+	}
+	thead {
+	    display: table-header-group;
+	    vertical-align: middle;
+	    border-color: inherit;
+	}
+	tr {
+	    display: table-row;
+	    vertical-align: inherit;
+	    border-color: inherit;
+	}
+	.tstyle_list th:first-child, .tstyle_list td:first-child {
+	    border-left: none;
+	}
+	.tstyle_list th.num {
+	    width: 30px;
+	}
+	.tstyle_list th {
+	    padding: 7px 9px;
+	    background: #f6f6f6;
+	    border-left: solid 1px #e9e1d7;
+	    border-bottom: solid 1px #adadad;
+	    color: #333;
+	}
+	tbody {
+	    display: table-row-group;
+	    vertical-align: middle;
+	    border-color: inherit;
+	}
+	.tstyle_list .num {
+	    width: 6%;
+	}
+	.tstyle_list th:first-child, .tstyle_list td:first-child {
+	    border-left: none;
+	}
+	.tstyle_list tbody.txt_left th, .tstyle_list tbody.txt_left td, .tstyle_list td.txt_left {
+	    text-align: left;
+	}
+	.tstyle_list td {
+	    padding: 12px 9px;
+	    border-left: solid 1px #e9e1d7;
+	    border-bottom: solid 1px #ddd;
+	}
+	a {
+	    color: #464646;
+	    text-decoration: none;
+	}
+	.tstyle_list td.txt_left {
+	    text-align: left;
+	}
+	a:-webkit-any-link {
+	    cursor: pointer;
+	}
+	.tstyle_list td {
+	    padding: 12px 9px;
+	    border-left: solid 1px #e9e1d7;
+	    border-bottom: solid 1px #ddd;
+	    text-align: center;
+	}
+	.pagination {
+	    display: flex;
+	    padding-left: 0;
+	    list-style: none;
+	    border-radius: .25rem;
+	}
+	input, textarea {
+	    border-radius: 3px;
+	    border-top-color: #8a8c94;
+	    border-bottom-color: #d5dee7;
+	}
+	.display_none	{
+			display: none;
+	}
+	.exhibit_infoArea {
+	    position: relative;
+	    overflow: hidden;
+	}
+	.brochure_view {
+	    padding-bottom: 50px;
+	    border-bottom: solid 1px #ddd;
+	}
+	.exhibit_infoArea .thmb {
+	    display: block;
+	    float: left;
+	    width: 300px;
+	    height: 440px;
+	    margin-right: 55px;
+	    background: #555;
+	}
+	.exhibit_infoArea .thmb img {
+	    width: 100%;
+	    height: 100%;
+	}
+	img {
+	    border: none;
+	    vertical-align: middle;
+	}
+	.exhibit_infoArea .exhibit_info {
+	    position: relative;
+	    margin-top: 20px;
+	    overflow: hidden;
+	}
+	.exhibit_info > strong, .exhibit_info .underline_title {
+	    display: block;
+	    margin: 0;
+	    font-size: 1.286em;
+	}
+	.underline_title {
+	    position: relative;
+	}
+	.underline_title, .exhibit_info > strong {
+	    padding-bottom: 15px;
+	    color: #333;
+	}
+	.exhibit_info .list_info {
+	    overflow: hidden;
+	}
+	.brochure_view .list_info li {
+	    padding-right: 80px;
+	}
+	.exhibit_info .list_info li {
+	    margin-top: 8px;
+	    overflow: hidden;
+	}
+	.brochure_view .list_info li > span:first-child {
+	    width: 80px;
+	}
+	.exhibit_info .list_info li > span:first-child {
+	    display: block;
+	    float: left;
+	    color: #333;
+	    letter-spacing: -0.05em;
+	    font-weight: bold;
+	}
+	.exhibit_info .list_info li > span.txt {
+	    position: relative;
+	    display: block;
+	    margin-left: 70px;
+	    text-align: left; 
+	}
+	.underline_title {
+		text-align: left;
+	}
+	li {
+		text-align: left;
+	}
+	.btn_area, .btn_area_center, .btn_area_right {
+	    margin-top: 40px;
+	    text-align: center;
+	}
+	.btn_black, .btn_gray, .btn_basic {
+	    position: relative;
+	    display: inline-block;
+	    width: 143px;
+	    height: 48px;
+	    background: #333;
+	    border: solid 1px #000;
+	    color: #fff;
+	    overflow: hidden;
+	    font-weight: bold;
+	    vertical-align: top;
+	}
  </style>
  </head>
  <body>
@@ -334,21 +544,21 @@
 		</ul>
 	</article>
 	 <section id="body">
-	 	<h1 class="stitle">발간자료</h1>
+	 	<h1 class="stitle">전시도록</h1>
 	 	<p class="page_info">국립고구려박물관의 발간도서를 알려드립니다</p>
 	 	<div class="float_wrap"></div>
 	 	<form id="boardbookVO" name="reqForm">
-	 		<section id="content">
+	 		<section id="content"  class="ab">
 	 			<article id="detail_content">
 	 				<ul class="tab_menu">
 	 					<li>
-	 						<a id="link01">전시도록</a>
+	 						<a class="link01">전시도록</a>
 	 					</li>
 	 					<li>
-	 						<a id="link02">발굴보고서</a>
+	 						<a class="link02">발굴보고서</a>
 	 					</li>
 	 					<li>
-	 						<a id="link03">기타</a>
+	 						<a class="link03">기타</a>
 	 					</li>
 	 				</ul>
 	 				<div class="float_wrap">
@@ -361,19 +571,839 @@
 	 					</p>
 	 					<p class="articles">
 	 						총
-	 						<span class="point01">60</span>
+	 						<span class="point01">15</span>
 	 						건
 	 						<span class="point01">1</span>
-	 						/4페이지
+	 						/1페이지
 	 					</p>
 	 				</div>
 	 				<table class="tstyle_list">
-	 					
+	 					<caption>발간도서안내 게시판으로 글 번호, 도서명, 발행기관, 발행년도를 제공</caption>
+	 					<colgroup>
+	 						<col width="7%">
+	 						<col width="*">
+	 						<col width="25%">
+	 						<col width="14%">
+	 					</colgroup>
+	 					<thead>
+	 						<tr>
+	 							<th scope="col" class="num">번호</th>
+	 							<th scope="col">도서명</th>
+	 							<th scope="col">발행기관</th>
+	 							<th scope="col">발행년도</th>
+	 						</tr>
+	 					</thead>
+	 					<tbody>
+	 						<c:forEach var="board" items="${published}">
+	 						<tr>
+	 							<td class="num">${board.acnum }</td>
+	 							<td class="txt_left">
+	 								<a href="<%=request.getContextPath()%>/relic/display?acnum=${board.acnum}">    
+	 									<span class="type" id="spanListSubject0" title="개태사, 태평성대 고려를 열다">
+	 									${board.title}</span>
+	 								</a>
+	 							</td>
+	 							<td class="num">${board.author}</td>
+	 							<td>${board.year }</td>
+	 						</tr>
+	 						</c:forEach>
+	 					</tbody>
 	 				</table>
-	 			</article>
+ 				</article>
 	 		</section>
-	 	</form>
-	 </section>
+	 		<section id="content" class="ac display_none">
+	 			<h1 class="stitle">발굴보고서</h1>
+	 			<p class="page_info">국립고구려박물관의 발굴보고서를 알려드립니다</p>
+	 			<article id="detail_content">
+	 				<ul class="tab_menu">
+	 					<li>
+	 						<a class="link01">전시도록</a>
+	 					</li>
+	 					<li>
+	 						<a class="link02">발굴보고서</a>
+	 					</li>
+	 					<li>
+	 						<a class="link03">기타</a>
+	 					</li>
+	 				</ul>
+	 					<div class="float_wrap">
+		 					<input type="hidden" name="searchCondition" value="SC_ALL">
+		 					<p class="date_search">
+		 						<span class="input_search">
+		 							<input id="searchKeyword" name="searchKeyword" title="검색어 입력" type="text" value placeholder="검색어 입력">
+		 							<input name type="image" src="<%=request.getContextPath()%>/resources/img/bhc.gif" alt="검색">
+		 						</span>
+		 					</p>
+		 					<p class="articles">
+		 						총
+		 						<span class="point01">15</span>
+		 						건
+		 						<span class="point01">1</span>
+		 						/1페이지
+		 					</p>
+	 					</div>
+			 				<table class="tstyle_list">
+			 					<caption>발간도서안내 게시판으로 글 번호, 도서명, 발행기관, 발행년도를 제공</caption>
+			 					<colgroup>
+			 						<col width="7%">
+			 						<col width="*">
+			 						<col width="25%">
+			 						<col width="14%">
+			 					</colgroup>
+			 					<thead>
+			 						<tr>
+			 							<th scope="col" class="num">번호</th>
+			 							<th scope="col">도서명</th>
+			 							<th scope="col">발행기관</th>
+			 							<th scope="col">발행년도</th>
+			 						</tr>
+			 					</thead>
+			 					<tbody>
+			 						<tr>
+			 							<td class="num">1</td>
+			 							<td class="txt_left">
+			 								<a id="link01">    
+			 									<span class="type" id="spanListSubject0" title="부여 능산리 1호(東下塚)">
+			 									부여 능산리 1호(東下塚)</span>
+			 								</a>
+			 							</td>
+			 							<td class="num">국립고구려박물관</td>
+			 							<td>2018.7</td>
+			 						</tr>
+			 						<tr>
+			 							<td class="num">2</td>
+			 							<td class="txt_left">
+			 								<a id="link02">    
+			 									<span class="type" id="spanListSubject2" 
+			 									title="부여 부소산 사지">
+			 									부여 부소산 사지</span>
+			 								</a>
+			 							</td>
+			 							<td>국립고구려박물관</td>
+			 							<td>2017.12-22</td>
+			 						</tr>
+			 						<tr>
+			 							<td class="num">3</td>
+			 							<td class="txt_left">
+			 								<a id="link03">    
+			 									<span class="type" id="spanListSubject3" 
+			 									title="부여 구아리 사지">
+			 									부여 구아리 사지</span>
+			 								</a>
+			 							</td>
+			 							<td>국립고구려박물관</td>
+			 							<td>2016.11</td>
+			 						</tr>
+			 						<tr>
+			 							<td class="num">4</td>
+			 							<td class="txt_left">
+			 								<a id="link04">    
+			 									<span class="type" id="spanListSubject4" 
+			 									title="부여 정림사지">
+			 									부여 정림사지</span>
+			 								</a>
+			 							</td>
+			 							<td>국립고구려박물관</td>
+			 							<td>2016.06-23</td>
+			 						</tr>
+			 						<tr>
+			 							<td class="num">5</td>
+			 							<td class="txt_left">
+			 								<a id="link05">    
+			 									<span class="type" id="spanListSubject5" 
+			 									title="부여 동남리사지">
+			 									부여 동남리사지</span>
+			 								</a>
+			 							</td>
+			 							<td>국립고구려박물관</td>
+			 							<td>2015.11-22</td>
+			 						</tr>
+			 						<tr>
+			 							<td class="num">6</td>
+			 							<td class="txt_left">
+			 								<a id="link06">    
+			 									<span class="type" id="spanListSubject6" 
+			 									title="부여 군수리 사지">
+			 									부여 군수리 사지</span>
+			 								</a>
+			 							</td>
+			 							<td>국립고구려박물관</td>
+			 							<td>2015.06-22</td>
+			 						</tr>
+			 						<tr>
+			 							<td class="num">7</td>
+			 							<td class="txt_left">
+			 								<a id="link07">    
+			 									<span class="type" id="spanListSubject7" 
+			 									title="소장품조사자료집 청동거울">
+			 										소장품조사자료집 청동거울</span>
+			 								</a>
+			 							</td>
+			 							<td>국립고구려박물관</td>
+			 							<td>2015.05-29</td>
+			 						</tr>
+			 						<tr>
+			 							<td class="num">8</td>
+			 							<td class="txt_left">
+			 								<a id="link08">    
+			 									<span class="type" id="spanListSubject8" 
+			 									title="	2008백제의 절터와 가마터 지표조사 보고서">
+			 											2008백제의 절터와 가마터 지표조사 보고서</span>
+			 								</a>
+			 							</td>
+			 							<td>국립고구려박물관</td>
+			 							<td>2015.05-08</td>
+			 						</tr>
+			 						<tr>
+			 							<td class="num">9</td>
+			 							<td class="txt_left">
+			 								<a id="link09">    
+			 									<span class="type" id="spanListSubject9" 
+			 									title="	청양 왕진리 가마터">
+			 											청양 왕진리 가마터</span>
+			 								</a>
+			 							</td>
+			 							<td>국립고구려박물관</td>
+			 							<td>2014.12-12</td>
+			 						</tr>
+			 						<tr>
+			 							<td class="num">10</td>
+			 							<td class="txt_left">
+			 								<a id="link10">    
+			 									<span class="type" id="spanListSubject10" 
+			 									title="凌寺2007 부여 능산리사지 6,7,8차 발굴조사보고서">
+			 										凌寺2007 부여 능산리사지 6,7,8차 발굴조사보고서	</span>
+			 								</a>
+			 							</td>
+			 							<td>국립고구려박물관</td>
+			 							<td>2014.05-08</td>
+			 						</tr>
+			 						<tr>
+			 							<td class="num">11</td>
+			 							<td class="txt_left">
+			 								<a id="link11">    
+			 									<span class="type" id="spanListSubject11" 
+			 									title="궁남지">
+			 										궁남지</span>
+			 								</a>
+			 							</td>
+			 							<td>국립고구려박물관</td>
+			 							<td>2013.09-25</td>
+			 						</tr>
+			 						<tr>
+			 							<td class="num">12</td>
+			 							<td class="txt_left">
+			 								<a id="link12">    
+			 									<span class="type" id="spanListSubject12" 
+			 									title="扶餘 羅城">
+			 											扶餘 羅城</span>
+			 								</a>
+			 							</td>
+			 							<td>국립고구려박물관</td>
+			 							<td>2013.04-29</td>
+			 						</tr>
+			 						<tr>
+			 							<td class="num">13</td>
+			 							<td class="txt_left">
+			 								<a id="link13">    
+			 									<span class="type" id="spanListSubject13" 
+			 									title="舒川 船島里遺蹟">
+			 											舒川 船島里遺蹟</span>
+			 								</a>
+			 							</td>
+			 							<td>국립고구려박물관</td>
+			 							<td>2012.12-20</td>
+			 						</tr>
+			 						<tr>
+			 							<td class="num">14</td>
+			 							<td class="txt_left">
+			 								<a id="link14">    
+			 									<span class="type" id="spanListSubject14" 
+			 									title="陵寺 능사 (본문, 도면·도판)">
+			 												陵寺 능사 (본문, 도면·도판)</span>
+			 								</a>
+			 							</td>
+			 							<td>국립고구려박물관</td>
+			 							<td>2012.09-24</td>
+			 						</tr>
+			 						<tr>
+			 							<td class="num">15</td>
+			 							<td class="txt_left">
+			 								<a id="link15">    
+			 									<span class="type" id="spanListSubject15" 
+			 									title="舒川 漢城里 (서천 한성리)">
+			 											舒川 漢城里 (서천 한성리)</span>
+			 								</a>
+			 							</td>
+			 							<td>국립고구려박물관</td>
+			 							<td>2012.05-23</td>
+			 						</tr>
+ 							</tbody>
+	 					</table>
+ 					</article>
+				</section>
+				<section id="content" class="ad display_none">
+		 			<article id="detail_content">
+		 				<h1 class="stitle">기타</h1>
+		 				<p class="page_info">국립고구려박물관의 발간도서를 알려드립니다</p>
+		 				<ul class="tab_menu">
+		 					<li>
+		 						<a class="link01">전시도록</a>
+		 					</li>
+		 					<li>
+		 						<a class="link02">발굴보고서</a>
+		 					</li>
+		 					<li>
+		 						<a class="link03">기타</a>
+		 					</li>
+		 				</ul>
+		 				<div class="float_wrap">
+		 					<input type="hidden" name="searchCondition" value="SC_ALL">
+		 					<p class="date_search">
+		 						<span class="input_search">
+		 							<input id="searchKeyword" name="searchKeyword" title="검색어 입력" type="text" value placeholder="검색어 입력">
+		 							<input name type="image" src="<%=request.getContextPath()%>/resources/img/bhc.gif" alt="검색">
+		 						</span>
+		 					</p>
+		 					<p class="articles">
+		 					
+		 						<span class="point01"></span>
+		 						
+		 						<span class="point01"></span>
+		 						
+		 					</p>
+ 						</div>
+		 				<table class="tstyle_list">
+		 					<caption>발간도서안내 게시판으로 글 번호, 도서명, 발행기관, 발행년도를 제공</caption>
+		 					<colgroup>
+		 						<col width="7%">
+		 						<col width="*">
+		 						<col width="25%">
+		 						<col width="14%">
+		 					</colgroup>
+		 					<thead>
+		 						<tr>
+		 							<th scope="col" class="num">번호</th>
+		 							<th scope="col">도서명</th>
+		 							<th scope="col">발행기관</th>
+		 							<th scope="col">발행년도</th>
+		 						</tr>
+		 					</thead>
+		 					<tbody>
+		 						<tr>
+		 							<td class="num"></td>
+		 							<td class="txt_left"></td>
+		 							<td class="num"></td>
+	 								<td></td>
+	 							</tr>
+ 							</tbody>
+ 						</table>
+					</article>
+				</section>
+ 			</form>
+	</section>
+<div class="float_wrap"></div>
+	<form id="boardbookVO" name="reqForm">
+		<section id="content"  class="ab">
+ 			<article id="detail_content">
+ 				<ul class="tab_menu">
+ 					<li>
+ 						<a class="link01">전시도록</a>
+ 					</li>
+ 					<li>
+ 						<a class="link02">발굴보고서</a>
+ 					</li>
+ 					<li>
+ 						<a class="link03">기타</a>
+ 					</li>
+ 				</ul>
+ 				<div class="float_wrap">
+				<section class="exhibit_infoArea brochure_view">
+					<span class="thmb">
+						<img alt="개태사, 태평성대 고려를 열다" src="<%=request.getContextPath()%>/resources/img/re/imageAtchfile.do">
+						
+					</span>
+					<div class="exhibit_info">
+						<h2 class="underline_title">개태사, 태평성대 고려를 열다</h2>
+						<ul class="list_info">
+							<li>
+								<span>저자</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행기관</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행년도</span>	
+								<span class="txt">2018.7</span>
+							</li>
+							<li>
+								<span>종류</span>	
+								<span class="txt">특별전 도록</span>
+							</li>
+							<li>
+								<span>페이지수</span>	
+								<span class="txt">255 page</span>
+							</li>
+							<li>
+								<span>가격</span>	
+								<span class="txt">\30,000원</span>
+							</li>
+						</ul>
+					</div>
+					<div class="btn_area">
+						<button class="btn_black" id="btnBoardList" type="button">
+							목록
+						</button>
+					</div>
+					<span class="thmb">
+						<img alt="부여 송국리" src="<%=request.getContextPath()%>/resources/img/re/imageAtchfile(1).do">
+					</span>
+					<div class="exhibit_info">
+						<h2 class="underline_title">부여 송국리</h2>
+						<ul class="list_info">
+							<li>
+								<span>저자</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행기관</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행년도</span>	
+								<span class="txt">2017-12-22</span>
+							</li>
+							<li>
+								<span>종류</span>	
+								<span class="txt">특별전 도록</span>
+							</li>
+							<li>
+								<span>페이지수</span>	
+								<span class="txt">221 page</span>
+							</li>
+							<li>
+								<span>가격</span>	
+								<span class="txt">\30,000원</span>
+							</li>
+						</ul>
+					</div>
+					<div class="btn_area">
+						<button class="btn_black" id="btnBoardList" type="button">
+							목록
+						</button>
+					</div>
+					<span class="thmb">
+						<img alt="사진으로 만나는 사비 백제" src="<%=request.getContextPath()%>/resources/img/re/imageAtchfile(2).do">
+					</span>
+					<div class="exhibit_info">
+						<h2 class="underline_title">사진으로 만나는 사비 백제</h2>
+						<ul class="list_info">
+							<li>
+								<span>저자</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행기관</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행년도</span>	
+								<span class="txt">2016-11</span>
+							</li>
+							<li>
+								<span>종류</span>	
+								<span class="txt">테마전 도록</span>
+							</li>
+							<li>
+								<span>페이지수</span>	
+								<span class="txt">154 page</span>
+							</li>
+							<li>
+								<span>가격</span>	
+								<span class="txt">\ 비매품</span>
+							</li>
+						</ul>
+					</div>
+					<div class="btn_area">
+						<button class="btn_black" id="btnBoardList" type="button">
+							목록
+						</button>
+					</div>
+					<span class="thmb">
+						<img alt="부소산" src="<%=request.getContextPath()%>/resources/img/re/imageAtchfilea(2).do">
+					</span>
+					<div class="exhibit_info">
+						<h2 class="underline_title">부소산</h2>
+						<ul class="list_info">
+							<li>
+								<span>저자</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행기관</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행년도</span>	
+								<span class="txt">2016-06-23</span>
+							</li>
+							<li>
+								<span>종류</span>	
+								<span class="txt">특별전 도록</span>
+							</li>
+							<li>
+								<span>페이지수</span>	
+								<span class="txt">213 page</span>
+							</li>
+							<li>
+								<span>가격</span>	
+								<span class="txt">\ 비매품</span>
+							</li>
+						</ul>
+					</div>
+					<div class="btn_area">
+						<button class="btn_black" id="btnBoardList" type="button">
+							목록
+						</button>
+					</div>
+					<span class="thmb">
+						<img alt="백제 정림사와 북위 영녕사" src="<%=request.getContextPath()%>/resources/img/re/a.do">
+					</span>
+					<div class="exhibit_info">
+						<h2 class="underline_title">백제 정림사와 북위 영녕사</h2>
+						<ul class="list_info">
+							<li>
+								<span>저자</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행기관</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행년도</span>	
+								<span class="txt">2015-11-22</span>
+							</li>
+							<li>
+								<span>종류</span>	
+								<span class="txt">특별전 도록</span>
+							</li>
+							<li>
+								<span>페이지수</span>	
+								<span class="txt">268 page</span>
+							</li>
+							<li>
+								<span>가격</span>	
+								<span class="txt">\ 비매품</span>
+							</li>
+						</ul>
+					</div>
+					<div class="btn_area">
+						<button class="btn_black" id="btnBoardList" type="button">
+							목록
+						</button>
+					</div>
+					<span class="thmb">
+						<img alt="국립부여박물관 HAND BOOK" src="<%=request.getContextPath()%>/resources/img/re/b.do">
+					</span>
+					<div class="exhibit_info">
+						<h2 class="underline_title">국립부여박물관 HAND BOOK</h2>
+						<ul class="list_info">
+							<li>
+								<span>저자</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행기관</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행년도</span>	
+								<span class="txt">2015-06-22</span>
+							</li>
+							<li>
+								<span>종류</span>	
+								<span class="txt">핸드북</span>
+							</li>
+							<li>
+								<span>페이지수</span>	
+								<span class="txt">300 page</span>
+							</li>
+							<li>
+								<span>가격</span>	
+								<span class="txt">\ 10000</span>
+							</li>
+						</ul>
+					</div>
+					<div class="btn_area">
+						<button class="btn_black" id="btnBoardList" type="button">
+							목록
+						</button>
+					</div>
+					<span class="thmb">
+						<img alt="国立扶餘博物館(日本語)" src="<%=request.getContextPath()%>/resources/img/re/c.do">
+					</span>
+					<div class="exhibit_info">
+						<h2 class="underline_title">国立扶餘博物館(日本語)</h2>
+						<ul class="list_info">
+							<li>
+								<span>저자</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행기관</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행년도</span>	
+								<span class="txt">2015-05-29</span>
+							</li>
+							<li>
+								<span>종류</span>	
+								<span class="txt">圖錄</span>
+							</li>
+							<li>
+								<span>페이지수</span>	
+								<span class="txt">304 page</span>
+							</li>
+							<li>
+								<span>가격</span>	
+								<span class="txt">\ 35000</span>
+							</li>
+						</ul>
+					</div>
+					<div class="btn_area">
+						<button class="btn_black" id="btnBoardList" type="button">
+							목록
+						</button>
+					</div>
+					<span class="thmb">
+						<img alt="Buyeo National Museum(English Ver.)" src="<%=request.getContextPath()%>/resources/img/re/d.do">
+					</span>
+					<div class="exhibit_info">
+						<h2 class="underline_title">Buyeo National Museum(English Ver.)</h2>
+						<ul class="list_info">
+							<li>
+								<span>저자</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행기관</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행년도</span>	
+								<span class="txt">2015-05-08</span>
+							</li>
+							<li>
+								<span>종류</span>	
+								<span class="txt">Catalogue</span>
+							</li>
+							<li>
+								<span>페이지수</span>	
+								<span class="txt">304 page</span>
+							</li>
+							<li>
+								<span>가격</span>	
+								<span class="txt">\ 35000</span>
+							</li>
+						</ul>
+					</div>
+					<div class="btn_area">
+						<button class="btn_black" id="btnBoardList" type="button">
+							목록
+						</button>
+					</div>
+					<span class="thmb">
+						<img alt="하늘에 올리는 염원 백제 금동 대향로" src="<%=request.getContextPath()%>/resources/img/re/f.do">
+					</span>
+					<div class="exhibit_info">
+						<h2 class="underline_title">하늘에 올리는 염원 백제 금동 대향로</h2>
+						<ul class="list_info">
+							<li>
+								<span>저자</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행기관</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행년도</span>	
+								<span class="txt">2013-9-25</span>
+							</li>
+							<li>
+								<span>종류</span>	
+								<span class="txt">도록</span>
+							</li>
+							<li>
+								<span>페이지수</span>	
+								<span class="txt"></span>
+							</li>
+							<li>
+								<span>가격</span>	
+								<span class="txt"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="btn_area">
+						<button class="btn_black" id="btnBoardList" type="button">
+							목록
+						</button>
+					</div>
+					<span class="thmb">
+						<img alt="기증으로 빛난 문화재 사랑" src="<%=request.getContextPath()%>/resources/img/re/g.do">
+					</span>
+					<div class="exhibit_info">
+						<h2 class="underline_title">기증으로 빛난 문화재 사랑</h2>
+						<ul class="list_info">
+							<li>
+								<span>저자</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행기관</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행년도</span>	
+								<span class="txt">2013-4-29</span>
+							</li>
+							<li>
+								<span>종류</span>	
+								<span class="txt">도록</span>
+							</li>
+							<li>
+								<span>페이지수</span>	
+								<span class="txt"></span>
+							</li>
+							<li>
+								<span>가격</span>	
+								<span class="txt"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="btn_area">
+						<button class="btn_black" id="btnBoardList" type="button">
+							목록
+						</button>
+					</div>
+					<span class="thmb">
+						<img alt="국립부여박물관 소도록" src="<%=request.getContextPath()%>/resources/img/re/h.do">
+					</span>
+					<div class="exhibit_info">
+						<h2 class="underline_title">국립부여박물관 소도록</h2>
+						<ul class="list_info">
+							<li>
+								<span>저자</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행기관</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행년도</span>	
+								<span class="txt">2012-12-20</span>
+							</li>
+							<li>
+								<span>종류</span>	
+								<span class="txt">소도록</span>
+							</li>
+							<li>
+								<span>페이지수</span>	
+								<span class="txt"></span>
+							</li>
+							<li>
+								<span>가격</span>	
+								<span class="txt">\ 14000</span>
+							</li>
+						</ul>
+					</div>
+					<div class="btn_area">
+						<button class="btn_black" id="btnBoardList" type="button">
+							목록
+						</button>
+					</div>
+					<span class="thmb">
+						<img alt="백제인의 얼굴, 백제를 만나다" src="<%=request.getContextPath()%>/resources/img/re/i.do">
+					</span>
+					<div class="exhibit_info">
+						<h2 class="underline_title">백제인의 얼굴, 백제를 만나다</h2>
+						<ul class="list_info">
+							<li>
+								<span>저자</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행기관</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행년도</span>	
+								<span class="txt">2012-09-24</span>
+							</li>
+							<li>
+								<span>종류</span>	
+								<span class="txt">도록</span>
+							</li>
+							<li>
+								<span>페이지수</span>	
+								<span class="txt">238 page</span>
+							</li>
+							<li>
+								<span>가격</span>	
+								<span class="txt">\ 30000</span>
+							</li>
+						</ul>
+					</div>
+					<div class="btn_area">
+						<button class="btn_black" id="btnBoardList" type="button">
+							목록
+						</button>
+					</div>
+					<span class="thmb">
+						<img alt="신과의 만남, 백제의 제사" src="<%=request.getContextPath()%>/resources/img/re/j.do">
+					</span>
+					<div class="exhibit_info">
+						<h2 class="underline_title">신과의 만남, 백제의 제사</h2>
+						<ul class="list_info">
+							<li>
+								<span>저자</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행기관</span>	
+								<span class="txt">국립고구려박물관</span>
+							</li>
+							<li>
+								<span>발행년도</span>	
+								<span class="txt">2012-05-23</span>
+							</li>
+							<li>
+								<span>종류</span>	
+								<span class="txt">도록</span>
+							</li>
+							<li>
+								<span>페이지수</span>	
+								<span class="txt"></span>
+							</li>
+							<li>
+								<span>가격</span>	
+								<span class="txt"></span>
+							</li>
+						</ul>
+					</div>
+					<div class="btn_area">
+						<button class="btn_black" id="btnBoardList" type="button">
+							목록
+						</button>
+					</div>				
+				</section>
+				
+				
 </body>		
 		
  

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.green.museum.dao.AcademicDAO">
+  <select id="selectrelicPublished" resultType="kr.green.museum.vo.AcademicVO">
+    select * from academic where 
+    <choose>
+    	<when test='actype.equals("전시도록") || actype.equals("발굴보고서")'>
+    		actype = #{actype}
+    	</when>
+    	<otherwise>
+    		actype='전시도록' or actype='발굴보고서'
+   		</otherwise>
+    </choose>
+   </select>
+   <select id="selectrelicdiplay" resultType="kr.green.museum.vo.AcademicVO">
+  	select * from academic where acnum = #{acnum}
+  </select>
+</mapper>
