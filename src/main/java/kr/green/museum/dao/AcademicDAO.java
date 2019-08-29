@@ -12,4 +12,6 @@ public interface AcademicDAO {
 
 	AcademicVO selectrelicdiplay(@Param("acnum") Integer acnum);
 
+	ArrayList<AcademicVO> selectrelichao(@Param("cri")Criteria cri, @Param("actype")String actype);
+
 }

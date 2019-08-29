@@ -25,4 +25,10 @@ public class AcademicServiceImp implements AcademicService {
 		return academicDao.selectrelicdiplay(acnum);
 	}
 
+	@Override
+	public ArrayList<AcademicVO> getrelichao(Criteria cri, String actype) {
+		// TODO Auto-generated method stub
+		return academicDao.selectrelichao(cri, actype);
+	}
+
 }

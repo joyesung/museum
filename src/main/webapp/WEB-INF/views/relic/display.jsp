@@ -569,7 +569,7 @@ $(document).ready(function(){
 			<div class="float_wrap">
 				<section class="exhibit_infoArea brochure_view">
 					<span class="thmb">
-						<img alt="개태사, 태평성대 고려를 열다" src="<%=request.getContextPath()%>/resources/img/re/imageAtchfile.do">
+						<img alt="개태사, 태평성대 고려를 열다" src="<%=request.getContextPath()%>/resources${board.file}  ">
 					
 				</span>
 				<div class="exhibit_info">
@@ -607,5 +607,6 @@ $(document).ready(function(){
 					</button>   
 				</div>
 			</section>
+			  
 		
 </body>

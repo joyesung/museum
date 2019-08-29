@@ -3,6 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.green.museum.dao.AcademicDAO">
+  
   <select id="selectrelicPublished" resultType="kr.green.museum.vo.AcademicVO">
     select * from academic where 
     <choose>
@@ -14,7 +15,14 @@
    		</otherwise>
     </choose>
    </select>
+   
    <select id="selectrelicdiplay" resultType="kr.green.museum.vo.AcademicVO">
   	select * from academic where acnum = #{acnum}
   </select>
+  
+  <select id="selectrelichao" resultType="kr.green.museum.vo.AcademicVO">
+    select * from academic where 
+    		actype='발굴보고서' 
+   </select>
+
 </mapper>

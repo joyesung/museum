@@ -10,4 +10,6 @@ public interface AcademicService {
 
 	AcademicVO getrelicdiplay(Integer acnum);
 
+	ArrayList<AcademicVO> getrelichao(Criteria cri, String actype);
+
 }

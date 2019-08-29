@@ -10,6 +10,7 @@ public class AcademicVO {
 	private String page;
 	private String price;
 	private String title;
+	private String file;
 	public int getAcnum() {
 		return acnum;
 	}
@@ -64,10 +65,17 @@ public class AcademicVO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	public String getFile() {
+		return file;
+	}
+	public void setFile(String file) {
+		this.file = file;
+	}
 	@Override
 	public String toString() {
 		return "AcademicVO [acnum=" + acnum + ", actype=" + actype + ", author=" + author + ", lssu=" + lssu + ", year="
-				+ year + ", kind=" + kind + ", page=" + page + ", price=" + price + ", title=" + title + "]";
+				+ year + ", kind=" + kind + ", page=" + page + ", price=" + price + ", title=" + title + ", file="
+				+ file + "]";
 	}
 	
 	
