@@ -13,7 +13,7 @@
 	})
 </script>
  <style type="text/css">
- 	body{
+body{
  		margin: 0;
  		padding: 0;
  	}
@@ -56,6 +56,7 @@
 	    overflow: visible;
 	    font-family: Malgun Gothic, '맑은 고딕', Dotum, '돋움', Gulim, '굴림', Tahoma, Verdana, AppleGothic, UnDotum, sans-serif;
 	    white-space: nowrap;
+	    
 	}
 	.hidden {
 	    display: block;
@@ -114,35 +115,29 @@
 	#divAllmenu{
 		display: none;
 	}
-	#body {
+	.pTitle {
+	    border-bottom: 2px solid #555;
+	}
+	 h3 {
+    
+	    color: #444;
+	    font-family: "NanumMyeongjo";
+	    font-size: 38px;
+	    letter-spacing: -2px;
+	    clear: both;
+	    padding-bottom: 10px;
+	}
+	.subtop {
 	    position: relative;
-	    width: 1200px;
-	    margin: 0 auto 60px;
+	    margin-bottom: 60px;
 	}
-	#body .stitle {
-	    padding: 26px 0 2px;
-	    border-top: solid 3px #555;
-	    color: #333;
-	    letter-spacing: -0.05em;
-	    text-align: center;
-	    font-size: 2.8em;
-	    overflow: hidden;
+	.subtop .breadcrumb {
+	    float: left;
+	    padding-top: 14px;
 	}
-	#body > .page_info {
-	    padding-bottom: 38px;
-	    border-bottom: solid 1px #ddd;
-	    text-align: center;
-	    letter-spacing: -0.1em;
-	}
-	#body > .float_wrap {
-	    height: 45px;
-	    border: solid 1px #ddd;
-	    border-top-color: #555;
-	    overflow: hidden;
-	}
-	form {
-	    margin: 0;
-	    padding: 0;
+	.subtop .func_box {
+	    float: right;
+	    padding-top: 16px;
 	}
 	.wrap_subcontent {
 	    padding-bottom: 200px;
@@ -151,20 +146,36 @@
 	    clear: both;
 	    position: relative;
 	}
-	html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, textarea, select, p, button {
-	    margin: 0;
-	    padding: 0;
-	}
-	.tab01 {
-		width: 920px;
-		height: 42px;	
-	}
 	.tabs_dft {
 	    border-bottom: 2px #bbb solid;
 	    height: 40px;
 	    margin-bottom: 20px !important;
 	}
+	ul, ol, li {
+	    list-style: none;
+	}
+	.tabs_dft .on {
+	    position: relative;
+	}
 	.tabs_dft li {
+	    float: left;
+	}
+	.tabs_dft .on a {
+	    height: 40px;
+	    line-height: 40px;
+	    background-color: #fff;
+	    color: #333;
+	    border: 2px #bbb solid;
+	    border-bottom: 0;
+	}
+	.tabs li a {
+	    padding-right: 15px;
+	    padding-left: 15px;
+	}
+	.tabs_dft li a {
+    	display: block;
+   	}
+   	.tabs_dft li {
 	    float: left;
 	}
 	.tabs li a {
@@ -184,55 +195,31 @@
 	    border-bottom: 0;
 	    margin-right: 2px;
 	}
-	a {
-	    text-decoration: none;
-	}
-	.tabs_dft .on {
-	    position: relative;
-	}
-	.tabs_dft li {
-	    float: left;
-	}
-	.tabs_dft .on a {
-	    height: 40px;
-	    line-height: 40px;
-	    background-color: #fff;
+	.sentence {
+	    margin-top: 30px;
 	    color: #333;
-	    border: 2px #bbb solid;
-	    border-bottom: 0;
+	    text-align: left; 
 	}
-	input, select, textarea {
-	    vertical-align: top;
+	.sentence span {
+	    font-family: "NanumGothic-Bold";
 	}
-	.tabs_dft {
-	    border-bottom: 2px #bbb solid;
-	    height: 40px;
-	    margin-bottom: 20px !important;
+	.sentence {
+	    margin-top: 30px;
+	    color: #333;
 	}
-	.search_area01 {
-	    border: 1px solid #dfdfdf;
-	}
-	.search_area01 {
-	    position: relative;
-	    top: 0;
-	    left: 0;
-	    height: 25px;
-	    margin-bottom: 20px;
-	    padding: 20px 10px 19px 37px;
-	    background-color: #f7f7f7;
-	}
-	.mt30 {
-	    margin-top: 30px !important;
-	}
-	img, fieldset, button, input {
-	    border: 0;
+	.size16 {
+	    color: #f1582f;
+	    font-size: 16px;
 	}
 	html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, textarea, select, p, button {
 	    margin: 0;
 	    padding: 0;
 	}
-	.search_area01 * {
-	    float: left;
+	form {
+	    display: block;
+	}
+	fieldset, button, input {
+	    border: 0;
 	}
 	caption, legend {
 	    overflow: hidden;
@@ -242,7 +229,38 @@
 	    line-height: 0;
 	    font-size: 0;
 	}
-	hidden {
+	input, select, textarea {
+	    vertical-align: top;
+	}
+	img, fieldset, button, input {
+	    border: 0;
+	}
+	body, h1, h2, h3, h4, th, td, input {
+	    font-family: "NanumGothic", "MS PGothic", Dotum, Arial, sans-serif;
+	    font-size: 13px;
+	    color: #333;
+	    line-height: 1.5em;
+	    font-weight: normal;
+	}
+	.search_area01 {
+	    border: 1px solid #dfdfdf;
+	}
+	.donate {
+	    padding: 20px 30px 19px;
+	}
+	.search_area01 {
+	    position: relative;
+	    top: 0;
+	    left: 0;
+	    height: 25px;
+	    margin-bottom: 20px;
+	    background-color: #f7f7f7;
+	}
+	.mt16 {
+	    margin-top: 16px;
+	    height: 66px;    
+	}
+	.hidden {
 	    position: absolute;
 	    top: -9999em;
 	    height: 0;
@@ -255,33 +273,15 @@
 	    display: inline-block;
 	    vertical-align: top;
 	}
+	.search_area01 * {
+	    float: left;
+	}
 	.search_area01 select {
 	    width: 67px;
 	    border: 1px solid #d3d3cc;
 	}
 	.search_area01 * {
 	    float: left;
-	}
-	.tabs_dft {
-	    border-bottom: 2px #bbb solid;
-	    height: 40px;
-	    margin-bottom: 20px !important;
-	}
-	#bbq {
-		width: 1200px;    
-	}
-	.tabs_dft li a {
-	    display: block;
-	    color: #777;
-	    height: 39px;
-	    line-height: 39px;
-	    font-weight: 600;
-	    font-size: 14px;
-	    text-align: center;
-	    background-color: #fff;
-	    border: 1px #ccc solid;
-	    border-bottom: 0;
-	    margin-right: 2px;
 	}
 	select, textarea {
 	    font-family: "NanumGothic", "MS PGothic", Dotum, Arial, sans-serif;
@@ -298,8 +298,8 @@
 	    min-height: 1.2em;
 	    padding: 0px 2px 1px;
 	}
-	.sl_size2 .sbHolder, .sl_size3 .sbHolder {
-	    width: 94px;
+	.sl_size1 .sbHolder {
+	    width: 144px;
 	}
 	.sbHolder {
 	    display: inline-block;
@@ -311,6 +311,9 @@
 	    line-height: 14px;
 	    background-color: #fff;
 	}
+	.search_area01 * {
+	    float: left;
+	}
 	.sbToggle {
 	    display: block;
 	    position: absolute;
@@ -318,6 +321,13 @@
 	    right: 0;
 	    width: 32px;
 	    height: 23px;
+	}
+	a {
+	    text-decoration: none;
+	    color: #333;
+	}
+	.donate span:first-child {
+	    margin-left: 0;
 	}
 	.hidden, .hide {
 	    display: block;
@@ -340,34 +350,6 @@
 	    white-space: nowrap;
 	    text-overflow: ellipsis;
 	}
-	.search_area01 {
-	    border: 1px solid #dfdfdf;
-	}
-	.search_area01 {
-	    position: relative;
-	    top: 0;
-	    left: 0; 
-	    height: 66px;
-	    margin-bottom: 20px;
-	    padding: 20px 10px 19px 37px;
-	    background-color: #f7f7f7;
-	}
-	.sl_size2 .sbHolder, .sl_size3 .sbHolder {
-	    width: 94px;
-	}
-	.sbHolder {
-	    display: inline-block;
-	    position: relative;
-	    height: 23px;
-	    border: solid 1px #d3d3cc;
-	    font-weight: normal;
-	    font-size: 12px;
-	    line-height: 14px;
-	    background-color: #fff;
-	} 
-	.sbOptions a, .sbSelector {
-	    font-size: 13px;
-	}  
 	.sbOptions {
 	    overflow: auto;
 	    position: absolute;
@@ -383,8 +365,20 @@
 	    list-style: none;
 	    background-color: #fff;
 	}
-	.search_area01 .sbOptions li {
-	    padding-right: 0;
+	.sbOptions {
+    overflow: auto;
+	    position: absolute;
+	    top: 24px !important;
+	    left: -1px;
+	    z-index: 1;
+	    width: 100%;
+	    margin: 0;
+	    padding: 0;
+	    max-height: 150px !important;
+	    border: solid 1px #d3d3cc;
+	    border-top-width: 0;
+	    list-style: none;
+	    background-color: #fff;
 	}
 	.search_area01 .sbOptions * {
 	    float: none;
@@ -401,21 +395,30 @@
 	    border-bottom: solid 1px #d3d3cc;
 	    text-align: left;
 	}
-	.hidden, .hide {
-	    display: block;
-	    position: absolute;
-	    top: -9999px;
-	    left: -9999px;
-	    width: 0;
-	    height: 0;
-	    text-indent: -9999px;
-	}
-	.relic_recommend_reliclist .search_area01 .sl_input {
-	    width: 428px;
-	    border: 1px solid black; 
-	}
 	.search_area01 input[type="text"] {
 	    height: 23px;
+	}
+	.sub_content input[type="text"], .sub_content input.input_pw {
+	    padding: 0 6px;
+	    border: 1px solid #d3d3cc;
+	    margin-left: 20px;   
+	}
+	body, h1, h2, h3, h4, th, td, input {
+	    font-family: "NanumGothic", "MS PGothic", Dotum, Arial, sans-serif;
+	    font-size: 13px;
+	    color: #333;
+	    line-height: 1.5em;
+	    font-weight: normal;
+	}
+	input[type="button"] {
+	    cursor: pointer;
+	    margin-left: 10px;   
+	}
+	.btn_search {
+	    margin-right: 3px;
+	}
+	.search_area01 * {
+	    float: left;
 	}
 	.roBlack {
 	    color: #fff;
@@ -434,35 +437,21 @@
 	    text-align: center;
 	    line-height: normal;
 	}
-	.btn_mini {
-	    display: inline-block;
-	    font-size: 12px;
-	    font-weight: bold;
-	    min-width: 50px;
-	    padding: 4px 12px 5px;
-	    box-sizing: border-box;
-	    text-align: center;
-	    line-height: normal;
-	}
 	.roWhite {
-    	color: #333;
-    }
-    span	{
-    	border: 1px solid gray;      
-    }
-    .search_select {
+	    color: #333;
+	    border-radius: 2px;
+	    border: 1px solid #555;
+	    background-color: #fff;
+	    box-shadow: 0 2px 2px 0px rgba(0,0,0,0.10);
+	    margin-right: 
+	}
+	.search_select {
 	    float: right;
 	    margin-bottom: 8px;
 	}
-	.hidden {
-	    position: absolute;
-	    top: -9999em;
-	    height: 0;
-	    width: 0;
-	}
-	.sl_size1, .sl_size2, .sl_size3, .sl_size4, .sl_size5, .sl_size6, .sl_size7, .sl_size8, .sl_size9, .sl_size10, .sl_size11, .sl_size12, .sl_size13, .sl_size14, .sl_size15, .sl_size16 {
+	.sl_size2 {
 	    display: inline-block;
-	    vertical-align: top;
+    	vertical-align: top;
 	}
 	.search_select select {
 	    margin-left: 5px;
@@ -481,6 +470,42 @@
 	    min-height: 1.2em;
 	    padding: 0px 2px 1px;
 	}
+	.sl_size2 .sbHolder, .sl_size3 .sbHolder {
+	    width: 94px;
+	}
+	.sbHolder {
+	    display: inline-block;
+	    position: relative;
+	    width: 60px;
+	    height: 23px;
+	    border: solid 1px #d3d3cc;
+	    font-weight: normal;
+	    font-size: 12px;
+	    line-height: 14px;
+	    background-color: #fff;
+	}
+	.search_area01 * {
+	    float: left;
+	}
+	#sbHolder_60074717 {
+		float: right;
+		margin-left: 200px;       
+	}
+	.search_area01 .search_select a {
+	    margin-left: 3px;
+	}
+	.sbSelector {
+	    display: block;
+	    width: 80%;
+	    overflow: hidden;
+	    position: absolute;
+	    top: 4px;
+	    left: 0;
+	    color: #333;
+	    text-indent: 7px;
+	    white-space: nowrap;
+	    text-overflow: ellipsis;
+	}
 	.sbOptions {
 	    overflow: auto;
 	    position: absolute;
@@ -496,15 +521,12 @@
 	    list-style: none;
 	    background-color: #fff;
 	}
-	.search_area01 .sbOptions * {
-	    float: none;
+		.search_area01 .search_select a {
+	    margin-left: 3px;
 	}
 	.search_area01 .sbOptions li {
 	    padding-right: 0;
-	}
-	.search_area01 .sbOptions * {
-	    float: none;
-	}
+	}  
 	.roligWhite {
 	    color: #333;
 	    border-radius: 2px;
@@ -512,36 +534,68 @@
 	    background-color: #f9f9f9;
 	    box-shadow: 0 2px 2px 0px rgba(0,0,0,0.10);
 	}
-	#sbHolder_35298581 {
-		float: right;
+	.ax {
+		border: 1px solid black;
+		width: 50px;
+		height: 30px;
+		background-color: #f9f9f9;
+	    box-shadow: 0 2px 2px 0px rgba(0,0,0,0.10);
+		             
+	}  
+	.xx {
+		text-align: center; 
+		width: 50px;
+		height: 30px;        
 	}
-	.search_select {
-		float: right;   
+	ul, ol, li {
+	    list-style: none;
 	}
-	.sl_input {
-		margin: 0 auto;   
+	.relic_searchlist .thumb-list5 .heightLi180 {
+	    float: left;
+	    width: 211px;
+	    margin-top: 15px;
+	    margin-right: 20px;
+	    border: 2px solid #f3f3f3;
+	    color: #fff;
+	      
 	}
-	.fieldset {
-		margin: 0 auto;   
+	.relic_searchlist .thumb-list5 .heightLi180 .thum_box {
+	    display: table-cell;
+	    width: 211px;
+	    height: 140px;
+	    margin-bottom: 10px;
+	    text-align: center;
+	    vertical-align: middle;
 	}
-	.list_ahn {
-	    width: 100%;
-	    border-top: 2px solid #666;
+	.relic_searchlist .thumb-list5 .heightLi180 .thum_box > img {
+	    max-width: 211px;
+	    max-height: 120px;
 	}
-	table {
-	    border-collapse: collapse;
-	    border-spacing: 0;
-	    border: 0;
-	}
-	caption, legend {
-	    overflow: hidden;
-	    width: 0;
-	    height: 0;
-	    text-indent: -9999em;
-	    line-height: 0;
+	img {
+	    vertical-align: top;
 	    font-size: 0;
+	    line-height: 0;
+	    margin: 0;
+	    padding: 0;
 	}
- </style>
+	a {
+	    text-decoration: none;
+	    color: #333;
+	}
+	body, h1, h2, h3, h4, th, td, input {
+	    font-family: "NanumGothic", "MS PGothic", Dotum, Arial, sans-serif;
+	    font-size: 13px;
+	    color: #333;
+	    line-height: 1.5em;
+	    font-weight: normal;
+	}
+	.thumb-list5 {
+		margin-left: 70px;             
+	}
+	.hh {
+		text-align: center;     
+	}  	
+ </style> 
  </head>
  <body>
 	<div>
@@ -637,107 +691,144 @@
 			</li>
 		</ul>
 	</article>
-	 <section id="body">
-	 	<h1 class="stitle">유물검색</h1>
-	 	<div class="float_wrap"></div>
-	 	<form id="boardbookVO" name="reqForm">
-	 		<div class="wrap_subcontent" style="height: auto;">  
-	 			<div class="sub_content relic_recommend_reliclist">
-	 				<div class="tab01">
-	 					<ul class="clear tabs_dft tabs" id="bbq">
-	 						<li class>
-	 							<a>전체</a>
-	 						</li>
-	 						<li class="on">
-	 							<a>선사·고대</a>
-	 						</li>
-	 						<li class>
-	 							<a>중·근세</a>
-	 						</li>
-	 						<li class>
-	 							<a>조각·공예</a>
-	 						</li> 
-	 					</ul>
-	 				</div>
-	 				<form id="searchForm" class="form-search clear" method="get">
-	 					<input id="showHallId" name="showHallId" type="hidden" value>
-	 					<input id="relicRecommendCategory" name="relicRecommendCategory" type="hidden" value="760">
-	 					<div class="search_area01 mt30">
-	 						<fieldset>
-	 							<legend>큐레이터 추천소장품 검색</legend>
-	 							<label class="hidden">검색 분야 선택</label>
-	 							<div class="sl_size3">
-	 								<select id="sc" name="sc" class="sl_design" title="검색 분류 선택" sb="23335303" style="display: none;">
-	 									<option value="COM.RELIC_NAME_KOR">한글명</option>
-	 									<option value="COM.RELIC_NAME_HANJA">한자명</option>
-	 								</select>
-	 								<div class="sbHolder" id="sbHolder_48649485">
-	 									<a id="sbToggle_48649485" href="#">
-	 										<span class="hide">검색분류 선택 목록보기</span>
- 										</a>
- 										<a id="sbSelector_48649485" href="#" class="sbSelector">한글명</a>
- 										<ul id="sbOption_48649485" class="sbOptions" style="top:13px; max-height: 632.5px; display: none;">
- 											<li>
- 												<a href="#" rel="COM.RELIC_NAME_KOR">한글명</a>	
- 											</li>
- 											<li>
- 												<a href="#" rel="COM.RELIC_NAME_HANJA">한자명</a>
- 											</li>
- 										</ul>
-	 								</div>
-	 							</div>
-	 							<label class="hide">검색어 입력</label>
-	 							<input id="sv" name="sv" class="sl_input" title="검색어 입력" type="text" value>
-	 							<input type="button" class="btn_search btn_miniroBlack" value="검색">
-	 							<a href="#" class="btn_mini">
-	 								<span>초기화</span>
-	 							</a>
-	 						</fieldset>
-	 						<div class="search_select">
-	 							<label class="hidden">출력갯수 선택</label>
-	 							<div class="sl_size2">
-	 								<select id="pageSize" name="pageSize" title="게시물 출력수 선택" class="sl_design" sb="35298581" style="display: none;">
-	 									<option value="10" selected="selected">10개씩</option>
-	 									<option value="20">20개씩</option>
-	 									<option value="30">30개씩</option>
-	 								</select>
-	 								<div class="sbHolder" id="sbHolder_35298581">
-	 									<a id="sbToggle_35298581" href="#" class="sbToggle">
-	 										<span class="hide">게시물 출력수 선택 목록보기</span>
-	 									</a>
-	 									<a id="sbSelector_35298581" href="#" class="sbSelector">
-	 										10개씩
-	 									</a>
-	 									<ul id="sbOptions_35298581" class="sbOptions" style="top:13px; max-height: 632.5px; display: none;">
-	 										<li>
-	 											<a href="#" rel="10">10개씩</a>
-	 										</li>
-	 										<li>
-	 											<a href="#" rel="20">20개씩</a>
-	 										</li>
-	 										<li class="last">
-	 											<a href="#" rel="30">30개씩</a>
-	 										</li>
-	 									</ul>
-	 								</div>
-	 							</div>
-	 							<a href="#" class="btn_mini roligwhite">
-	 								<span>적용</span>
-	 							</a>
-	 						</div>
-	 					</div>  
-	 				</form>
-	 				<div class="tab_cont">
-	 					<table class="list_ahn">
-	 						<caption>리스트를 대표이미지와 이미지의 상세정보로 나타낸 테이블 입니다.</caption>
-	 						<colgroup>
-	 							<col></
-	 						</colgroup>
-	 					</table>
-	 				</div>
-	 			</div>
-	 		</div>
-	 	</form>
+	<div class="subtop" id="subtop">
+	<h3 class="hh">소장품 검색</h3>
+		<div class="pTitle">
+			
+		</div>
+		<div class="breadcrumb menu-location nav-location seo-location">
+		
+		</div>
+		<div class="func_box"></div>
+	</div>
+	<div class="wrap_subcontent" style="height: auto;">
+		<div class="sub_content relic_searchlist">
+			<ul class="clear tabs_dft tabs">
+				<li class="on">
+					<a href="#">일반검색</a>
+				</li>
+				<li>
+					<a href="#">디렉토리검색</a>
+				</li>
+			</ul>
+			<div class="tab_cont">
+				<p class="sentence">
+					국립중앙박물관 주요 소장품 
+					<span>
+						<em class="size16">1,202</em>
+						건
+					</span>
+					에 대해 검색하실 수 있습니다.
+				</p>
+				<form id="relicSearch" class="form-search" method="get" name="relicSearch">
+					<fieldset>
+						<legend>소장품 일반 검색</legend>
+						<input type="hidden" name="startCount" id="startCount" value="0">
+						<div class="search_area01 donate mt16">
+							<label class="hidden" for="sc">검색구분 선택</label>
+							<div class="sl_size1">
+								<select id="sc" name="sc" class="sl_design" sb="64357215" style="display: none;">
+									<option value="TITLE_KOR">소장품명</option>
+									<option value="RELIC_NAME_HANJA">다른명칭</option>
+									<option value="RELIC_NATION_NM_KOR">국적/시대</option>
+									<option value="RELIC_PRODUCE_DESC_KOR">출토지</option>
+									<option value="RELIC_MATERIAL_DESC">재질</option>
+									<option value="WRITER_KOR">재질</option>
+									<option value="WRITER_KOR">작가</option>
+									<option value="RELIC_TREASURE_CODE11_KOR">국보/보물 지정번호</option>
+									<option value="RELIC_CODE_NM_KOR">소장품번호</option>
+								</select>
+								<div id="sbHolder_64357215" class="sbHolder">
+									<a id="sbToggle_64357215" href="#" class="sbToggle">
+										<span class="hide">다른회차 보기</span>
+									</a>
+									<a id="sbSelector_64357215" href="#" class="sbSelector">국적/시대</a>
+									<ul id="sbOptions_64357215" class="sbOptions" style="display: none;">
+										<li>
+											<a href="" rel="TITLE_KOR">소장품명</a>
+										</li>
+										<li>
+											<a href="#" rel="RELIC_NAME_HANJA">다른명칭</a>
+										</li>
+										<li>
+											<a href="#" rel="RELIC_NATION_NM_KOR">국적/시대</a>
+										</li>
+										<li>
+											<a href="#" rel="RELIC_PRODUCE_DESC_KOR">출토지</a>
+										</li>
+										<li>
+											<a href="#" rel="RELIC_MATERIAL_DESC">재질</a>
+										</li>
+										<li>
+											<a href="#" rel="WRITER_KOR">작가</a>
+										</li>
+										<li>
+											<a href="#" rel="RELIC_TREASURE_CODE11_KOR">국보/보물 지정번호</a>
+										</li>
+										<li class="last">
+											<a href="#" rel="RELIC_CODE_NM_KOR">소장품번호</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<input id="sv" name="query" class="sl_input" title="검색어 입력" type="text" 
+							style="width:350px;" value="고구려" onkeypress="javascript:pressCheck((event),this);">
+							<input type="button" class="btn_search btn_mini roBlack" value="검색">
+							<a href="#" class="btn_mini roWhite">
+								<span>초기화</span>
+							</a>
+							<div class="search_select">
+								<label class="hidden">출력갯수 선택</label>
+								<div class="sl_size2">
+									<select id="pageSize" name="pageSize" title="출력갯수 선택" class="sl_design" sb="60074717" style="display: none;">
+										<option value="12">12개 출력</option>
+										<option value="24">24개 출력</option>
+										<option value="36">36개 출력</option>
+									</select>
+									<div id="sbHolder_60074717" class="sbHolder">
+										<a id="sbToggle_60074717" href="#" class="sbToggle">
+											<span class="hide">출력갯수 선택 목록보기</span>
+										</a>
+										<a id="sbSelector_60074717" href="#" class="sbSelector">12개 출력</a>
+										<ul class="sbOptions" id="sbOptions_60074717" style="display: none;">
+											<li>
+												<a href="#" rel="12">12개 출력</a>
+											</li>
+											<li>
+												<a href="#" rel="24">24개 출력</a>
+											</li>
+											<li class="last">
+												<a href="#" rel="36">36개 출력</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<a href="#" class="ax">
+									<span class="xx">적용</span>
+								</a>
+							</div>
+						</div>
+					</fieldset>
+				</form>
+				<div class="thumb-wrap">
+					<ul class="thumb-list5 clearfix">
+						<c:forEach var="board" items="${relic}">
+							<li class="heightLi180">
+								<a href="<%=request.getContextPath()%>/relic/number?renum=${board.renum}" class="thum_box">
+									<img alt="부뚜막 대표이미지" src="<%=request.getContextPath()%>/${board.file}">
+								</a>
+								<div>
+									<a href="<%=request.getContextPath()%>/relic/number?renum=${board.renum}">
+										${board.rename}	
+									</a>
+								</div>
+							</li>
+						</c:forEach>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>		
 		
  

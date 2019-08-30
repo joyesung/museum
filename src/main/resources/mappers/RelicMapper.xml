@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.green.museum.dao.RelicDAO">
+  
+  <select id="selectrelicnumber" resultType="kr.green.museum.vo.RelicVO">
+    select * from relic where renum = #{renum}
+   </select>
+  
+  <select id="selectrelicsearch" resultType="kr.green.museum.vo.RelicVO">
+  	select * from relic 
+  </select>
+
+</mapper>

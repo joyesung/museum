@@ -31,8 +31,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import kr.green.museum.service.AcademicService;
 import kr.green.museum.service.MemberService;
+import kr.green.museum.service.RelicService;
 import kr.green.museum.vo.AcademicVO;
 import kr.green.museum.vo.MemberVO;
+import kr.green.museum.vo.RelicVO;
 import kr.green.muesum.utils.UploadFileUtils;
 import kr.green.museum.HomeController;
 import kr.green.museum.pagination.Criteria;
@@ -53,6 +55,8 @@ public class HomeController {
 	private JavaMailSender mailSender;
 	@Autowired
 	AcademicService academicservice;
+	@Autowired
+	RelicService relicservice;
 	
 	 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -320,11 +324,26 @@ public class HomeController {
 			
 		}
 		@RequestMapping(value="/relic/search", method =RequestMethod.GET)
-		public ModelAndView searchGet(ModelAndView mv) {
-			logger.info("시설소개페이지");
+		public ModelAndView searchGet(ModelAndView mv,Integer renum) {
+			logger.info("유물 검색");
+			ArrayList<RelicVO> search = relicservice.getrelicsearch();
 			mv.setViewName("/relic/search");
+			System.out.println(search);
+			mv.addObject("relic",search);
 			return mv;
 			
 		}
+		@RequestMapping(value="/relic/number", method =RequestMethod.GET)
+		public ModelAndView numberGet(ModelAndView mv, Criteria cri, Integer renum) {
+			logger.info("유물 상세내용");
+			
+			RelicVO number = relicservice.getrelicnumber(renum);
+			mv.addObject("search",number);
+			System.out.println(number);
+			mv.setViewName("/relic/number");
+			return mv;
+			
+		}
+		
 }
 
