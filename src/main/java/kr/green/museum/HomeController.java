@@ -281,6 +281,7 @@ public class HomeController {
 			return mv;
 			
 		}
+		
 		@RequestMapping(value="/academic/science", method =RequestMethod.GET)
 		public ModelAndView scienceGet(ModelAndView mv) {
 			logger.info("시설소개페이지");
@@ -341,6 +342,13 @@ public class HomeController {
 			mv.addObject("search",number);
 			System.out.println(number);
 			mv.setViewName("/relic/number");
+			return mv;
+			
+		}
+		@RequestMapping(value="/guide/sure", method =RequestMethod.GET)
+		public ModelAndView sureGet(ModelAndView mv) {
+			logger.info("시설소개페이지");
+			mv.setViewName("/guide/sure");
 			return mv;
 			
 		}

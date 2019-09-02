@@ -373,7 +373,7 @@
 					<li> <a href="<%=request.getContextPath()%>/main/home">국립고구려박물관</a></li>    
 					<li> <a href="<%=request.getContextPath()%>/guide/gu">안내</a></li>
 					<li> <a href="<%=request.getContextPath()%>/exhibition/special">전시</a></li>
-					<li>유물/학술</li>
+					<li><a href="<%=request.getContextPath()%>/relic/search">유물/학술</a></li>
 					<li> <a href="<%=request.getContextPath()%>/board/list">게시판</a></li>
 					<li>교육</li>
 					<li> 
@@ -414,7 +414,7 @@
 				</ul>
 			</li>
 			<li id="liAllLnb2" class="submenu">
-				<a>전시</a>
+				<a href="<%=request.getContextPath()%>/exhibition/special">전시</a>
 				<ul class="depth2" id="ulAllSubmeuLv2_2">
 				<li>
 					<a href="<%=request.getContextPath()%>/exhibition/special">특별전시</a>
@@ -424,10 +424,10 @@
 				</ul>	
 			</li>
 			<li id="liAllLnb3" class="submenu">
-				<a>유물/학술</a>
+				<a href="<%=request.getContextPath()%>/relic/search">유물/학술</a>
 				<ul class="depth2" id="ulAllSubmeuLv2_3">
 				<li>
-					<a>소장품검색</a>
+					<a href="<%=request.getContextPath()%>/relic/search">소장품검색</a>
 				</li>
 				<li>
 					<a href="<%=request.getContextPath()%>/relic/published">발간자료</a>
@@ -438,7 +438,7 @@
 				</ul>	
 			</li>
 			<li id="liAllLnb4" class="submenu">
-				<a>게시판</a>
+				<a href="<%=request.getContextPath()%>/board/list">게시판</a>
 				<ul class="depth2" id="ulAllSubmeuLv2_4">
 				<li>
 					<a href="<%=request.getContextPath()%>/board/list">공지사항/게시판</a>
@@ -455,6 +455,7 @@
 					<a>교육자료</a>
 				</li>
 				</ul>
+				
 			</li>
 		</ul>
 	</article>
@@ -601,11 +602,14 @@
 							</tbody>
 						</table>
 						<div class="btn_area_center">
-							<button type="button" id="btnGrpappSave" title="신청하기" class="btn_black">
+							<a href="<%=request.getContextPath()%>/guide/sure"><button type="button" id="btnGrpappSave" title="신청하기" class="btn_black">
 								신청하기
-							</button>
+							</button></a>
 							<button type="button" title="취소가기" class="btn_gray">
 								취소하기  
+							</button>
+							<button type="button" title="예약취소" class="btn_gray">
+								예약취소  
 							</button>
 						</div>
 					</fieldset>

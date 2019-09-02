@@ -386,11 +386,11 @@
 		<div class="logowrap">
 			<nav class="mune-list">
 				<ul id="gnavigation">
-					<li><a href="<%=request.getContextPath()%>/main/home">국립고구려박물관</a></li>    
-					<li><a href="<%=request.getContextPath()%>/guide/gu">안내</a></li>
-					<li><a href="<%=request.getContextPath()%>/exhibition/special">전시</a></li>
-					<li>유물/학술</li>
-					<li><a href="<%=request.getContextPath()%>/board/list">게시판</a></li>
+					<li> <a href="<%=request.getContextPath()%>/main/home">국립고구려박물관</a></li>    
+					<li> <a href="<%=request.getContextPath()%>/guide/gu">안내</a></li>
+					<li> <a href="<%=request.getContextPath()%>/exhibition/special">전시</a></li>
+					<li><a href="<%=request.getContextPath()%>/relic/search">유물/학술</a></li>
+					<li> <a href="<%=request.getContextPath()%>/board/list">게시판</a></li>
 					<li>교육</li>
 					<li> 
 					<i class="fas fa-bars"></i>
@@ -404,7 +404,7 @@
 		<ul id="gnavigation_all" class="container">
 			<li id="allmenuli" style="display: none;"></li>
 			<li id="liAllLnb1" class="submenu">
-				<a>안내</a>
+				<a href="<%=request.getContextPath()%>/guide/gu">안내</a>
 				<ul class="depth2" id="ulAllSubmeuLv2_1">
 					<li>
 						<a href="<%=request.getContextPath()%>/guide/gu">관람시유의사항</a>
@@ -430,7 +430,7 @@
 				</ul>
 			</li>
 			<li id="liAllLnb2" class="submenu">
-				<a>전시</a>
+				<a href="<%=request.getContextPath()%>/exhibition/special">전시</a>
 				<ul class="depth2" id="ulAllSubmeuLv2_2">
 				<li>
 					<a href="<%=request.getContextPath()%>/exhibition/special">특별전시</a>
@@ -440,10 +440,10 @@
 				</ul>	
 			</li>
 			<li id="liAllLnb3" class="submenu">
-				<a>유물/학술</a>
+				<a href="<%=request.getContextPath()%>/relic/search">유물/학술</a>
 				<ul class="depth2" id="ulAllSubmeuLv2_3">
 				<li>
-					<a>소장품검색</a>
+					<a href="<%=request.getContextPath()%>/relic/search">소장품검색</a>
 				</li>
 				<li>
 					<a href="<%=request.getContextPath()%>/relic/published">발간자료</a>
@@ -454,7 +454,7 @@
 				</ul>	
 			</li>
 			<li id="liAllLnb4" class="submenu">
-				<a>게시판</a>
+				<a href="<%=request.getContextPath()%>/board/list">게시판</a>
 				<ul class="depth2" id="ulAllSubmeuLv2_4">
 				<li>
 					<a href="<%=request.getContextPath()%>/board/list">공지사항/게시판</a>
@@ -471,6 +471,7 @@
 					<a>교육자료</a>
 				</li>
 				</ul>
+				
 			</li>
 		</ul>
 	</article>
