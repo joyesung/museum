@@ -329,7 +329,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<div>
+	<div>
 		<div class="logowrap">
 			<nav class="mune-list">
 				<ul id="gnavigation">
@@ -373,6 +373,9 @@
 					</li>
 					<li>
 						<a href="<%=request.getContextPath()%>/guide/directions">오시는길</a>
+					</li>
+					<li>
+						<a href="<%=request.getContextPath()%>/guide/leng">예약정보조회</a>
 					</li>
 				</ul>
 			</li>

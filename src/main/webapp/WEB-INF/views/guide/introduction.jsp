@@ -405,6 +405,9 @@
 					<li>
 						<a href="<%=request.getContextPath()%>/guide/directions">오시는길</a>
 					</li>
+					<li>
+						<a href="<%=request.getContextPath()%>/guide/leng">예약정보조회</a>
+					</li>
 				</ul>
 			</li>
 			<li id="liAllLnb2" class="submenu">
@@ -453,7 +456,6 @@
 			</li>
 		</ul>
 	</article>
-	
 	<section id="body">
 		<h1 class="stitle">박물관소개</h1>
 		<p class="page_info">안녕하세요 국립고구려박물관입니다.</p>

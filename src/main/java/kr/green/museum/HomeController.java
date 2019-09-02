@@ -352,6 +352,26 @@ public class HomeController {
 			return mv;
 			
 		}
-		
+		@RequestMapping(value="/guide/leng", method =RequestMethod.GET)
+		public ModelAndView lengGet(ModelAndView mv) {
+			logger.info("시설소개페이지");
+			mv.setViewName("/guide/leng");
+			return mv;
+			
+		}
+		@RequestMapping(value="/guide/chi", method =RequestMethod.GET)
+		public ModelAndView chiGet(ModelAndView mv) {
+			logger.info("시설소개페이지");
+			mv.setViewName("/guide/chi");
+			return mv;
+			
+		}
+		@RequestMapping(value="/guide/good", method =RequestMethod.GET)
+		public ModelAndView goodGet(ModelAndView mv) {
+			logger.info("시설소개페이지");
+			mv.setViewName("/guide/good");
+			return mv;
+			
+		}
 }
 

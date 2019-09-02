@@ -146,43 +146,39 @@
 	}
 	#content {
 	    position: relative;
-	    width: 1120px;
+	  /*   width: 1120px; */   
 	    margin: 0 auto;
 	    padding: 32px 39px 40px;
 	    border: 1px solid #ddd;
 	    border-top: none;
 	    overflow: hidden;
 	}
-	.tab_menu {
-	    position: relative;
-	    width: 100%;
-	    min-height: 40px;
-	    margin-bottom: 45px;
-	    border-left: solid 1px #ddd;
-	    border-bottom: solid 1px #bbb;
-	    letter-spacing: -0.1em;
-	}
-	.tab_menu > li {
-	    float: left;
-	    width: 168px;
-	    background: #f9f9f9;
-	    text-align: center;
-	}
-	ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6 {
-	    margin: 0;
-	    padding: 0;
-	    list-style: none;
-	}
-	.tab_menu > li > a {
+	header, footer, article, section, aside, nav, main {
 	    display: block;
-	    height: 31px;
-	    padding-top: 8px;
-	    background: #fff;
-	    border: solid 1px #ddd;
-	    border-bottom: none;
-	    border-left: none;
 	}
-		.title_hidden {
+	.login_box {
+	    width: 815px;
+	    margin: auto;
+	    padding: 40px;
+	    border: solid 5px #ddd;
+	}
+	input, textarea {
+	    border-radius: 3px;
+	    border-top-color: #8a8c94;
+	    border-bottom-color: #d5dee7;
+	}
+	select, input {
+	    vertical-align: middle;
+	    font-size: 0.929em;
+	}
+	input[type="hidden" i] {
+	    display: none;
+	    -webkit-appearance: initial;
+	    background-color: initial;
+	    cursor: default;
+	    padding: initial;
+	}
+	.title_hidden {
 	    width: 100%;
 	    height: 1px;
 	    text-indent: -9999px;
@@ -191,156 +187,137 @@
 	    font-size: 1.5em;
 	    letter-spacing: -0.1em;
 	}
-	.float_wrap, .float_wrap02, .link_wrap {
-	    display: block;
-	    overflow: hidden;
-	}
-	.float_wrap .articles {
-	    float: left;
-	}
-		.articles {
-	    margin-bottom: 10px;
-	    font-weight: bolder;
-	}
-	.point01, .point01_bold {
-	    color: #da3d00;
-	}
-	.float_wrap .date_search {
-	    float: right;
-	    margin-bottom: 8px;
-	}
-	input[type="text"], input[type="tel"], input[type="search"], input[type="number"], input[type="date"], input[type="email"], input[type="password"] {
-	    height: 20px;
-	    padding: 2px;
-	    border-color: #cacfda;
-	    border-top-color: #8a8c94;
-	}
-	.input_search {
-	    display: inline-block;
-	    border: solid 1px #cacfda;
-	    border-top-color: #8a8c94;
-	    border-bottom-color: #d5dee7;
-	    border-radius: 2px;
-	}
-	.input_search input[type="text"] {
-	    width: 220px;
-	    margin-top: 2px;
-	    border: none;
-	}
-	exhibit_list {
-	    width: 100%;
-	    border-top: solid 2px #adadad;
+	.chkType_info {
+	    padding-bottom: 35px;
 	    border-bottom: solid 1px #ddd;
-	    overflow: hidden;
-	}
-	.exhibit_list > li:first-child {
-	    border-top: none;
-	}
-	.exhibit_list > li {
-	    padding-top: 20px;
-	    overflow: hidden;
-	    margin-bottom: 20px;
-	}
-	.exhibit_list > #linked {
-	    float: left;
-	    display: block;
-	    width: 150px;
-	    height: 210px;
-	    margin-right: 30px;
-	    overflow: hidden;
-	}
-	a {
-	    color: #464646;
-	    text-decoration: none;
-	}
-	.exhibit_list > li .thmb img {
-	    max-width: 100%;
+	    text-align: center;
+	    font-size: 1em;
 	}
 	img {
 	    border: none;
 	    vertical-align: middle;
 	}
-	.exhibit_list .exhibit_info {
-	    position: relative;
+	.chkType_info {
+	    padding-bottom: 35px;
+	    border-bottom: solid 1px #ddd;
+	    text-align: center;
+	    font-size: 1em;
+	}
+	.form_login {
+	    width: 550px;      
+	    margin: 40px auto 0;
 	    overflow: hidden;
 	}
-	.exhibit_info > strong, .exhibit_info .underline_title {
-	    display: block;
+	fieldset {
 	    margin: 0;
-	    font-size: 1.286em;
+	    padding: 0;
+	    border: none;
 	}
-	.underline_title, .exhibit_info > strong {
-	    padding-bottom: 15px;
-	    color: #333;
+	fieldset {
+	    display: block;
+	    margin-inline-start: 2px;
+	    margin-inline-end: 2px;
+	    padding-block-start: 0.35em;
+	    padding-inline-start: 0.75em;
+	    padding-inline-end: 0.75em;
+	    padding-block-end: 0.625em;
+	    min-inline-size: min-content;
 	}
-	.exhibit_info .list_info {
+	legend {
+	    font-size: 0;
+	    line-height: 0;
 	    overflow: hidden;
 	}
-	.exhibit_list > li .thmb {
-	    float: left;
+	legend {
 	    display: block;
+	    padding-inline-start: 2px;
+	    padding-inline-end: 2px;
+	    border-width: initial;
+	    border-style: none;
+	    border-color: initial;
+	    border-image: initial;
+	}
+	.login_list {
+	    float: left;
+	    width: 355px;
+	    overflow: hidden;
+	}
+	.login_list span:first-child {
+	    margin-top: 0;
+	}
+	.login_list span {
+	    display: block;
+	}
+	.login_list span label {
+	    display: inline-block;
+	   /*  width: 60px; */   
+	    margin-right: 15px;
+	    text-align: right;
+	    font-weight: bold;
+	}
+	label {
+	    cursor: default;
+	}
+	.login_list span input {
+	    width: 72%;
+	    padding: 10px 5px;
+	}
+	input[type="text"], input[type="tel"], input[type="search"], input[type="number"], input[type="date"], input[type="email"], input[type="password"] {
+	    height: 20px;
+	    border-color: #cacfda;
+	    border-top-color: #8a8c94;
+	}
+	input, textarea {
+	    border-top-color: #8a8c94;
+	    border-bottom-color: #d5dee7;
+	}
+	input {
+	    vertical-align: middle;
+	    font-size: 0.929em;
+	}
+	.login_list span input {
+	    padding: 10px 5px;
+	}
+	.boq {
+		text-align: left;    
+	}
+	#boq {
+		text-align: left;   
+	}
+	span {
+		text-align: left;  	
+	}
+	#rsv_cp_1 {
+		margin-left: 15px;     
+	}
+	.btn_login {
+	    float: right;
 	    width: 150px;
-	    height: 210px;
-	    margin-right: 30px;
 	    overflow: hidden;
 	}
-	.exhibit_info .list_info li {
-	    margin-top: 8px;
+	.btn_login .btn_black {
+	    width: 150px;
+	    height: 146px;
+	    font-size: 1.5em;
+	    float: right;  
+	}
+	.btn_black, .btn_gray, .btn_basic {
+	    position: relative;
+	    display: inline-block;
+	    background: #333;
+	    border: solid 1px #000;
+	    color: #fff;
 	    overflow: hidden;
-	}
-	.exhibit_info .list_info li > span:first-child {
-	    display: block;
-	    float: left;
-	    width: 70px;
-	    color: #333;
-	    letter-spacing: -0.05em;
 	    font-weight: bold;
+	    vertical-align: top;
+	    float: right;  
 	}
-	.exhibit_info .list_info li > span.txt {
-	    position: relative;
-	    display: block;
-	    margin-left: 70px;
-	}
-	.point01, .point01_bold {
-	    color: #da3d00;
-	}
-	.exhibit_info .list_info li > span:first-child {
-	    display: block;
-	    float: left;
-	    width: 70px;
-	    color: #333;
-	    letter-spacing: -0.05em;
-	    font-weight: bold;
-	}
-	.exhibit_info .list_info li > span.txt {
-	    position: relative;
-	    display: block;
-	    margin-left: 70px;
-	    text-align: left;
-	    
-	}
-	.exhibit_info .list_info li > span:first-child {
-	    display: block;
-	    float: left;
-	    width: 70px;
-	    color: #333;
-	    letter-spacing: -0.05em;
-	    font-weight: bold;
-	}
-	.exhibit_info .list_info li > span.txt {
-	    position: relative;
-	    display: block;
-	    margin-left: 70px;
-	    
-	}
-	.longColumn {
-	    height: 8.3em;
-	    margin-bottom: 18px;
-	    text-align: left;  
+	.ck {
+		float: right;   
 	}
  </style>
  </head>
-<body>
+ <body>
 	<div>
 		<div class="logowrap">
 			<nav class="mune-list">
@@ -438,78 +415,62 @@
 		</ul>
 	</article>
 	<section id="body">
-		<h1 class="stitle">특별전시</h1>
-		<p class="page_info">국립고구려박물관에서 진행중인 전시를 알려드립니다.</p>
+		<h1 class="stitle">예약정보조회</h1>
+		<p class="page_info"></p>
 		<div class="float_wrap"></div>
-		<form id="displayVO" name="reqForm" action="/display/dispnowList.do?disp_due_gb=NOW&menu_nix=gbB0367n" method="post">
+		<form id="resvusermanVO" name="reqForm" method="post">
 			<section id="content">
-				<ul class="tab_menu">
-					<li class="on">
-						<a id="link01">현재전시</a>
-					</li>      
-				</ul>
-				<h1 class="title_hidden">현재전시</h1>
-				<div class="float_wrap">
-					<p class="articles">
-						총
-						<span class="point01">1</span>
-						
-						건
-						<span class="point01">1</span>
-						/1
-							page
-					</p>
-					<p class="date_search">
-						<input id="srchFromDT" name="srchFromDT" title="시작날짜 입력" type="text" value placeholder="예)2019-08-26"
-						size="10" maxlength="10">
-						"~"
-						<input id="srchToDT" name="srchRToDT" title="종료날짜 입력" type="text" placeholder="예)2019-09-03" value size="10" maxlength="10">
-						<span class="input_search">
-							<input id="searchKeyword" name="searchKeyword" title="검색어 입력" type="text"  
-							value placeholder="전시명">
-							<input name type = "image" src="<%=request.getContextPath()%>/resources/img/btn_search.gif" alt="검색" >
-						</span>
-					</p>
-				</div>
-				<ul class="exhibit_list">
-					<li>
-						<a id="linked" class="thmb">
-							<img alt="" src="<%=request.getContextPath()%>/resources/img/meng.jpg">  
-						</a>
-						<div class="exhibit_info">
-							<strong>칸의 제국 몽골</strong>
-							<ul class="list_info">
-								<li>
-									<span>
-										기간
-									</span>
-									<span class="txt point01">2019-08-30~2019-10-28</span>
-								</li>
-								<li>
-									<span>
-										장소
-									</span>
-									<span class="txt">
-										고구려박물관 상설전시관 3전시실
-									</span>
-								</li>
-								<li>
-									<span>
-										내용
-									</span>
-									<span class="txt longColumn">
-										국립중앙박물관은 몽골 과학아카데미 역사학 고고학 연구소, 몽골국립박물관, 복드 한 궁전박물관과 공동으로 특별전‘칸의 제국 몽골’을 개최합니다. 
-										한몽 공동 학술조사 20주년을 기념하여 마련한 이번 전시에는 몽골 국가지정문화재 16건을 포함한 536점의 선사시대부터 근현대에 이르는 몽골의 역사와 문화를 대표하는 귀중한 유산을 선보입니다. 
-										유목 문화에 대한 이해의 폭을 넓히는 동시에 다양한 문화를 체험하고 즐길 수 있는 기회의 장이 되기를 기대합니다. 
-									</span>
-								</li>
-							</ul> 
-						</div>
-					</li>
-				</ul>
+				<article id="detail_content">
+					<div class="login_box">
+						<input type="hidden" name="m" value>
+						<input type="hidden" id="EncodeData" name="EncodeData" value>
+						<article id="form_login">
+							<h1 class="title_hidden">개인정보확인</h1>
+							<p class="txt_center chkType_info">
+								<img alt="국립부여박물관 누리집 개인정보확인 페이지입니다. 
+								신청시 입력한 정보를 입력해 주십시오. 
+								입력정보를 모르신다면 기획운영과(041-833-8562), 
+								학예실(041-833-8563)로 문의해 주세요." src="<%=request.getContextPath()%>/resources/img/e.png">
+							</p>
+							<div class="form_login">
+								<fieldset>
+									<legend>본인인증 절차</legend>
+									<div class="login_list">
+										<span>
+											<label for="rsv_nm">신청자명</label>
+											<input id="rsv_nm" name="rsv_nm" title="신청자명" type="text" value>
+										</span>
+										<span>
+											<label for="userHp" class="boq" id="boq">연락처</label>
+											<input id="rsv_cp_1" name="rsv_cp_1" title="연락처 앞자리" style="width:10%"
+											maxlength="4" type="text" value>
+											-
+											<input id="rsv_cp_2" name="rsv_cp_2" title="연락처 가운데자리"
+											style="width:10%" maxlength="4" type="text" value>
+											-
+											<input id="rsv_cp_3" name="rsv_cp_3" title="연락처 뒷자리"
+											style="width:10%" maxlength="4" type="text" value>
+										</span>
+										<span>
+											<label for="rsv_pass">비밀번호</label>
+											<input id="rsv_pass" name="rsv_pass" title="비밀번호" maxlength="15"
+											type="password" value>
+										</span> 
+									</div>
+									<div class="btn_login">
+										<a href="<%=request.getContextPath()%>/guide/chi" class="ck">
+											<button type="button" id="btnSiteLogin" class="btn_black">
+											예약정보조회</button>
+										</a>
+									</div>
+								</fieldset>
+							</div>
+						</article>
+					</div>
+				</article>
 			</section>
 		</form>
 	</section>
 </body>		
-</body>
-</html>
+		
+ 

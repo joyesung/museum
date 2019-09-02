@@ -183,6 +183,9 @@
 					<li>
 						<a href="<%=request.getContextPath()%>/guide/directions">오시는길</a>
 					</li>
+					<li>
+						<a href="<%=request.getContextPath()%>/guide/leng">예약정보조회</a>
+					</li>
 				</ul>
 			</li>
 			<li id="liAllLnb2" class="submenu">

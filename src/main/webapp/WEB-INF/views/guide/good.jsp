@@ -143,15 +143,19 @@
 	form {
 	    margin: 0;
 	    padding: 0;
+	    display: block;
 	}
 	#content {
 	    position: relative;
-	    width: 1120px;
+	    /* width: 1120px; */
 	    margin: 0 auto;
 	    padding: 32px 39px 40px;
 	    border: 1px solid #ddd;
 	    border-top: none;
 	    overflow: hidden;
+	}
+	header, footer, article, section, aside, nav, main {
+	    display: block;
 	}
 	.tab_menu {
 	    position: relative;
@@ -168,179 +172,122 @@
 	    background: #f9f9f9;
 	    text-align: center;
 	}
-	ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6 {
-	    margin: 0;
-	    padding: 0;
-	    list-style: none;
-	}
-	.tab_menu > li > a {
+	.tab_menu > li.on > a {
 	    display: block;
-	    height: 31px;
-	    padding-top: 8px;
-	    background: #fff;
-	    border: solid 1px #ddd;
-	    border-bottom: none;
-	    border-left: none;
+	    height: 32px;
+	    background: #626262;
+	    border: 1px solid transparent;
+	    color: #fff;
+	    text-decoration: underline;
+	    font-weight: bold;
 	}
-		.title_hidden {
-	    width: 100%;
-	    height: 1px;
-	    text-indent: -9999px;
+	.depth2_title, .depth2_title02 {
+	    margin-bottom: 13px;
+	    color: #333;
 	}
-	h1 {
-	    font-size: 1.5em;
+	h2 {
+	    font-size: 1.357em;
 	    letter-spacing: -0.1em;
+	    text-align: left;  	
 	}
-	.float_wrap, .float_wrap02, .link_wrap {
-	    display: block;
-	    overflow: hidden;
-	}
-	.float_wrap .articles {
-	    float: left;
-	}
-		.articles {
-	    margin-bottom: 10px;
-	    font-weight: bolder;
-	}
-	.point01, .point01_bold {
-	    color: #da3d00;
-	}
-	.float_wrap .date_search {
-	    float: right;
-	    margin-bottom: 8px;
-	}
-	input[type="text"], input[type="tel"], input[type="search"], input[type="number"], input[type="date"], input[type="email"], input[type="password"] {
-	    height: 20px;
-	    padding: 2px;
-	    border-color: #cacfda;
-	    border-top-color: #8a8c94;
-	}
-	.input_search {
-	    display: inline-block;
-	    border: solid 1px #cacfda;
-	    border-top-color: #8a8c94;
-	    border-bottom-color: #d5dee7;
-	    border-radius: 2px;
-	}
-	.input_search input[type="text"] {
-	    width: 220px;
-	    margin-top: 2px;
-	    border: none;
-	}
-	exhibit_list {
+	.tstyle_write {
+	    clear: both;
 	    width: 100%;
 	    border-top: solid 2px #adadad;
-	    border-bottom: solid 1px #ddd;
-	    overflow: hidden;
+	    border-bottom: solid 1px #adadad;
 	}
-	.exhibit_list > li:first-child {
-	    border-top: none;
-	}
-	.exhibit_list > li {
-	    padding-top: 20px;
-	    overflow: hidden;
-	    margin-bottom: 20px;
-	}
-	.exhibit_list > #linked {
-	    float: left;
-	    display: block;
-	    width: 150px;
-	    height: 210px;
-	    margin-right: 30px;
-	    overflow: hidden;
-	}
-	a {
-	    color: #464646;
-	    text-decoration: none;
-	}
-	.exhibit_list > li .thmb img {
-	    max-width: 100%;
-	}
-	img {
+	table {
+	    border-collapse: collapse;
 	    border: none;
+	}
+	caption {
+	    width: 100%;
+	    height: 1px;
+	    line-height: 0;
+	    color: transparent;
+	    font-size: 0.1em;
+	    overflow: hidden;
+	}
+	caption {
+	    display: table-caption;
+	    text-align: -webkit-center;
+	}
+	colgroup {
+	    display: table-column-group;
+	}
+	col {
+	    display: table-column;
+	}
+	tbody {
+	    display: table-row-group;
 	    vertical-align: middle;
+	    border-color: inherit;
 	}
-	.exhibit_list .exhibit_info {
-	    position: relative;
-	    overflow: hidden;
+	tr {
+	    display: table-row;
+	    vertical-align: inherit;
+	    border-color: inherit;
 	}
-	.exhibit_info > strong, .exhibit_info .underline_title {
-	    display: block;
-	    margin: 0;
-	    font-size: 1.286em;
-	}
-	.underline_title, .exhibit_info > strong {
-	    padding-bottom: 15px;
+	.tstyle_write th {
+	    padding: 7px 10px;
+	    background: #f6f6f6;
+	    border-right: solid 1px #ddd;
+	    border-bottom: solid 1px #ddd;
 	    color: #333;
-	}
-	.exhibit_info .list_info {
-	    overflow: hidden;
-	}
-	.exhibit_list > li .thmb {
-	    float: left;
-	    display: block;
-	    width: 150px;
-	    height: 210px;
-	    margin-right: 30px;
-	    overflow: hidden;
-	}
-	.exhibit_info .list_info li {
-	    margin-top: 8px;
-	    overflow: hidden;
-	}
-	.exhibit_info .list_info li > span:first-child {
-	    display: block;
-	    float: left;
-	    width: 70px;
-	    color: #333;
-	    letter-spacing: -0.05em;
-	    font-weight: bold;
-	}
-	.exhibit_info .list_info li > span.txt {
-	    position: relative;
-	    display: block;
-	    margin-left: 70px;
-	}
-	.point01, .point01_bold {
-	    color: #da3d00;
-	}
-	.exhibit_info .list_info li > span:first-child {
-	    display: block;
-	    float: left;
-	    width: 70px;
-	    color: #333;
-	    letter-spacing: -0.05em;
-	    font-weight: bold;
-	}
-	.exhibit_info .list_info li > span.txt {
-	    position: relative;
-	    display: block;
-	    margin-left: 70px;
 	    text-align: left;
-	    
 	}
-	.exhibit_info .list_info li > span:first-child {
-	    display: block;
-	    float: left;
-	    width: 70px;
-	    color: #333;
-	    letter-spacing: -0.05em;
-	    font-weight: bold;
+	.tstyle_write td {
+	    padding: 7px 10px;
+	    border-left: solid 1px #ddd;
+	    border-bottom: solid 1px #ddd;
 	}
-	.exhibit_info .list_info li > span.txt {
+	.letter_spacing {
+	    letter-spacing: 0;
+	}
+	label {
+	    cursor: default;
+	}
+	.tstyle_write td {
+	    padding: 7px 10px;
+	    border-left: solid 1px #ddd;
+	    border-bottom: solid 1px #ddd;
+	}
+	input, textarea {
+	    border-radius: 3px;
+	    border-top-color: #8a8c94;
+	    border-bottom-color: #d5dee7;
+	}
+	select, input {
+	    vertical-align: middle;
+	    font-size: 0.929em;
+	}
+	.tstyle_write td {
+	    padding: 7px 10px;
+	    border-left: solid 1px #ddd;
+	    border-bottom: solid 1px #ddd;
+	}
+	.letter_spacing {
+	    letter-spacing: 0;
+	}
+	.btn_area, .btn_area_center, .btn_area_right {
+	    margin-top: 40px;
+	    text-align: center;
+	}
+	.btn_black, .btn_gray, .btn_basic {
 	    position: relative;
-	    display: block;
-	    margin-left: 70px;
-	    
-	}
-	.longColumn {
-	    height: 8.3em;
-	    margin-bottom: 18px;
-	    text-align: left;  
+	    display: inline-block;
+	    width: 143px;
+	    height: 48px;
+	    background: #333;
+	    border: solid 1px #000;
+	    color: #fff;
+	    overflow: hidden;
+	    font-weight: bold;
+	    vertical-align: top;
 	}
  </style>
  </head>
-<body>
+ <body>
 	<div>
 		<div class="logowrap">
 			<nav class="mune-list">
@@ -438,78 +385,79 @@
 		</ul>
 	</article>
 	<section id="body">
-		<h1 class="stitle">특별전시</h1>
-		<p class="page_info">국립고구려박물관에서 진행중인 전시를 알려드립니다.</p>
+		<h1 class="stitle">예약상태조회</h1>
+		<p class="page_info"></p>
 		<div class="float_wrap"></div>
-		<form id="displayVO" name="reqForm" action="/display/dispnowList.do?disp_due_gb=NOW&menu_nix=gbB0367n" method="post">
+		<form id="resvdftapplVO" name="reqForm" method="post">
 			<section id="content">
-				<ul class="tab_menu">
-					<li class="on">
-						<a id="link01">현재전시</a>
-					</li>      
-				</ul>
-				<h1 class="title_hidden">현재전시</h1>
-				<div class="float_wrap">
-					<p class="articles">
-						총
-						<span class="point01">1</span>
-						
-						건
-						<span class="point01">1</span>
-						/1
-							page
-					</p>
-					<p class="date_search">
-						<input id="srchFromDT" name="srchFromDT" title="시작날짜 입력" type="text" value placeholder="예)2019-08-26"
-						size="10" maxlength="10">
-						"~"
-						<input id="srchToDT" name="srchRToDT" title="종료날짜 입력" type="text" placeholder="예)2019-09-03" value size="10" maxlength="10">
-						<span class="input_search">
-							<input id="searchKeyword" name="searchKeyword" title="검색어 입력" type="text"  
-							value placeholder="전시명">
-							<input name type = "image" src="<%=request.getContextPath()%>/resources/img/btn_search.gif" alt="검색" >
-						</span>
-					</p>
-				</div>
-				<ul class="exhibit_list">
-					<li>
-						<a id="linked" class="thmb">
-							<img alt="" src="<%=request.getContextPath()%>/resources/img/meng.jpg">  
+				<article id="detail_content">
+					<ul class="tab_menu menuCount5">
+						<li id="liGbtabList01" class="on">
+							<a href="<%=request.getContextPath()%>/guide/chi">단체관람</a>
+						</li>
+					</ul>
+					<h2 class="depth2_title">단체관람 예약 내용</h2>
+					<table class="tstyle_write" summary="단체관람 예약 신청시 신청일시, 신청인원, 이름, 핸드폰, 단체명, 지역 정보 입력">
+						<caption>
+							
+							단체관람 예약 내용
+					
+						</caption>
+						<colgroup>
+							<col width="150">
+							<col width="*">
+						</colgroup>
+						<tbody>
+							<tr>
+								<th scope="row">신청일시</th>
+								<td class="letter_spacing">
+								2019년 9월 3일 
+								11시
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">
+									<label for="title">신청 방법/일시</label>
+								</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">신청자명</th>
+								<td>
+									<input id="rsv_id" name="rsv_id" type="hidden" value>
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">연락처</th>
+								<td class="letter_spacing"></td>
+							</tr>
+							<tr>
+								<th scope="row">신청인원</th>
+								<td class="letter_spacing"></td>
+							</tr>
+							<tr>
+								<th scope="row">단체명</th>
+								<td></td>
+							</tr>
+							<tr>
+								<th scope="row">인솔자 정보</th>
+								<td>
+									<span style="display: inline-block;width:55px">성명 :</span>
+									<br>
+									<span style="display: inline-block;width:55px">연락처 :</span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="btn_area">
+						<a href="<%=request.getContextPath()%>/guide/chi">
+							<button type="button" title="확인" class="btn_black">확인</button>
 						</a>
-						<div class="exhibit_info">
-							<strong>칸의 제국 몽골</strong>
-							<ul class="list_info">
-								<li>
-									<span>
-										기간
-									</span>
-									<span class="txt point01">2019-08-30~2019-10-28</span>
-								</li>
-								<li>
-									<span>
-										장소
-									</span>
-									<span class="txt">
-										고구려박물관 상설전시관 3전시실
-									</span>
-								</li>
-								<li>
-									<span>
-										내용
-									</span>
-									<span class="txt longColumn">
-										국립중앙박물관은 몽골 과학아카데미 역사학 고고학 연구소, 몽골국립박물관, 복드 한 궁전박물관과 공동으로 특별전‘칸의 제국 몽골’을 개최합니다. 
-										한몽 공동 학술조사 20주년을 기념하여 마련한 이번 전시에는 몽골 국가지정문화재 16건을 포함한 536점의 선사시대부터 근현대에 이르는 몽골의 역사와 문화를 대표하는 귀중한 유산을 선보입니다. 
-										유목 문화에 대한 이해의 폭을 넓히는 동시에 다양한 문화를 체험하고 즐길 수 있는 기회의 장이 되기를 기대합니다. 
-									</span>
-								</li>
-							</ul> 
-						</div>
-					</li>
-				</ul>
+					</div>
+				</article>	
 			</section>
 		</form>
 	</section>
 </body>		
-</body>
-</html>
+		
+ 
