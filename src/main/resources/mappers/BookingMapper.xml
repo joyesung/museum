@@ -3,7 +3,10 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.green.museum.dao.BookingDAO">
-  
+  <insert id="insertsure">
+  	insert into booking(boodate,booid,boophone,personnel,boogroup,booleading)
+  		values(#{booking.boodate},#{booking.booid},#{booking.boophone},#{booking.personnel}, #{booking.boogroup},#{booking.booleading})
+  </insert>
   
 
 </mapper>

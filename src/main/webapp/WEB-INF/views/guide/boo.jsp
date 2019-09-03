@@ -583,7 +583,7 @@
 									</th>
 									<td>
 										 
-										<input id="rsv_dt" name="rsv_dt" type="text"  onclick="$('#rsv_dt').datepicker('show');">    
+										<input id="rsv_dt" name="${booking.boodate}" type="text"  onclick="$('#rsv_dt').datepicker('show');">    
 										<input id="rsv_seq" name="rsv_seq" type="hidden" value>
 									</td>     
 								</tr>
@@ -593,7 +593,7 @@
 										<label for="rsv_num">아이디</label>
 									</th>
 									<td>
-										<input type="text" id="rsv_nm" name="rsv_nm" value="${user.id}" title="신청자명" readonly="true">
+										<input type="text" id="rsv_nm" name="${user.id}" value="${user.id}" title="신청자명" readonly="true">
 									</td>
 								</tr>
 								<tr>
@@ -602,9 +602,9 @@
 										<label for="tel">연락처</label>
 									</th>
 									<td>
-										<input id="rsv_cp_1" name="rsv_cp_1" title="연락처 앞자리" class="txt_center" type="text" value size="3" maxlength="3">-
-										<input id="rsv_cp_2" name="rsv_cp_2" title="연락처 가운데자리" class="txt_center" type="text" value size="4" maxlength="4">-
-										<input id="rsv_cp_3" name="rsv_cp_3" title="연락처 끝자리" class="txt_center" type="text" value size="4" maxlength="4">
+										<input id="rsv_cp_1" name="${booking.boophone}" title="연락처 앞자리" class="txt_center" type="text" value size="3" maxlength="3">-
+										<input id="rsv_cp_2" name="${booking.boophone}" title="연락처 가운데자리" class="txt_center" type="text" value size="4" maxlength="4">-
+										<input id="rsv_cp_3" name="${booking.boophone}" title="연락처 끝자리" class="txt_center" type="text" value size="4" maxlength="4">
 									</td>
 								</tr>
 								<tr>
@@ -613,7 +613,7 @@
 										<label for="rsv_pass">비밀번호</label>
 									</th>
 									<td>
-										<input id="rsv_pass" name="rsv_pass" title="비밀번호" type="password" value="">
+										<input id="rsv_pass" name="${booking.boopass}" title="비밀번호" type="password" value="">
 									</td>
 								</tr>
 								<tr>
@@ -626,7 +626,7 @@
 										</label>
 									</th>
 									<td>
-										<input id="rsv_organ" name="rsv_organ" title="단체명(학교명)" type="text" value="">
+										<input id="rsv_organ" name="${booking.boogroup}" title="단체명(학교명)" type="text" value="">
 									</td>
 								</tr>
 								<tr>
@@ -639,7 +639,7 @@
 										<span class="rsv_leadr">
 											<label for="rsv_leadr_nm">성명</label>
 											:
-											<input id="rsv_leadr_nm" name="rsv_leadr_nm" title="인솔자 성명" type="text" value="">
+											<input id="rsv_leadr_nm" name="${booking.booleading}" title="인솔자 성명" type="text" value="">
 										</span>
 										<span class="rsv_leadr">
 											연락처 :

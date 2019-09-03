@@ -1,42 +1,31 @@
 package kr.green.museum.vo;
 
 public class BookingVO {
-	private int num; 			//예약 번호
-	private String id;			//예약한 사람 아이디
+	private int boonum; 			//예약 번호
+	private String booid;			//예약한 사람 아이디
 	private String personnel; 	//예약한 인원
-	private String bootype;		//예약한 타입
-	private String boocontents; //예약한내용
-	private String boodate;		//예약한날짜
-	private String boogroup;	//예약한단체명
-	public int getNum() {
-		return num;
+	private String boodate;		//예약한 타입
+	private String boogroup; //예약한내용
+	private String booleading;		//예약한날짜
+	private String boophone;
+	private String boopass;//예약한단체명
+	public int getBoonum() {
+		return boonum;
 	}
-	public void setNum(int num) {
-		this.num = num;
+	public void setBoonum(int boonum) {
+		this.boonum = boonum;
 	}
-	public String getId() {
-		return id;
+	public String getBooid() {
+		return booid;
 	}
-	public void setId(String id) {
-		this.id = id;
+	public void setBooid(String booid) {
+		this.booid = booid;
 	}
 	public String getPersonnel() {
 		return personnel;
 	}
 	public void setPersonnel(String personnel) {
 		this.personnel = personnel;
-	}
-	public String getBootype() {
-		return bootype;
-	}
-	public void setBootype(String bootype) {
-		this.bootype = bootype;
-	}
-	public String getBoocontents() {
-		return boocontents;
-	}
-	public void setBoocontents(String boocontents) {
-		this.boocontents = boocontents;
 	}
 	public String getBoodate() {
 		return boodate;
@@ -50,9 +39,29 @@ public class BookingVO {
 	public void setBoogroup(String boogroup) {
 		this.boogroup = boogroup;
 	}
+	public String getLeading() {
+		return booleading;
+	}
+	public void setLeading(String leading) {
+		this.booleading = leading;
+	}
+	public String getBoophone() {
+		return boophone;
+	}
+	public void setBoophone(String boophone) {
+		this.boophone = boophone;
+	}
+	public String getBoopass() {
+		return boopass;
+	}
+	public void setBoopass(String boopass) {
+		this.boopass = boopass;
+	}
 	@Override
 	public String toString() {
-		return "BookingVO [num=" + num + ", id=" + id + ", personnel=" + personnel + ", bootype=" + bootype
-				+ ", boocontents=" + boocontents + ", boodate=" + boodate + ", boogroup=" + boogroup + "]";
+		return "BookingVO [boonum=" + boonum + ", booid=" + booid + ", personnel=" + personnel + ", boodate=" + boodate
+				+ ", boogroup=" + boogroup + ", leading=" + booleading + ", boophone=" + boophone + ", boopass=" + boopass
+				+ "]";
 	}
+	
 }

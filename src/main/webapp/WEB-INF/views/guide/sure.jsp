@@ -465,29 +465,29 @@
 						</colgroup>
 						<tbody>
 							<tr>
-								<th scope="row">신청일시</th>
+								<th scope="row">${booking.boodate}</th>
 								<td class="letter_spacing"></td>
 							</tr>
 							<tr>
-								<th scope="row">아이디</th>
+								<th scope="row">${booking.booid}</th>
 								<td>
 									<input id="rsv_id" name="rsv_id" type="hidden" value>
 								</td>
 							</tr>
 							<tr>
-								<th scope="row">연락처</th>
+								<th scope="row">${booking.boophone}</th>
 								<td class="letter_spacing"></td>
 							</tr>
 							<tr>
-								<th scope="row">신청인원</th>
+								<th scope="row">${booking.personnel}</th>
 								<td class="letter_spacing"></td>
 							</tr>
 							<tr>
-								<th scope="row">단체명</th>
+								<th scope="row">${booking.boogroup}</th>
 								<td class="letter_spacing"></td>
 							</tr>
 							<tr>
-								<th scope="row">인솔자정보</th>
+								<th scope="row">${booking.booleading}</th>
 								<td>
 									<span style="display: inline-block;width:55px">성명 :</span>
 									<br>

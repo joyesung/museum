@@ -30,9 +30,12 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.green.museum.service.AcademicService;
+import kr.green.museum.service.BookingService;
 import kr.green.museum.service.MemberService;
 import kr.green.museum.service.RelicService;
 import kr.green.museum.vo.AcademicVO;
+import kr.green.museum.vo.BoardVO;
+import kr.green.museum.vo.BookingVO;
 import kr.green.museum.vo.MemberVO;
 import kr.green.museum.vo.RelicVO;
 import kr.green.muesum.utils.UploadFileUtils;
@@ -57,6 +60,8 @@ public class HomeController {
 	AcademicService academicservice;
 	@Autowired
 	RelicService relicservice;
+	@Autowired
+	BookingService bookingService;
 	
 	 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
@@ -285,7 +290,7 @@ public class HomeController {
 		public ModelAndView booPost(ModelAndView mv) {
 			logger.info("시설소개페이지");
 			mv.setViewName("/guide/boo");
-			return mv;
+			return mv; 
 			
 		}
 		
@@ -355,6 +360,15 @@ public class HomeController {
 		@RequestMapping(value="/guide/sure", method =RequestMethod.GET)
 		public ModelAndView sureGet(ModelAndView mv) {
 			logger.info("시설소개페이지");
+			mv.setViewName("/guide/sure");
+			return mv;
+			
+		}
+		@RequestMapping(value="/guide/sure", method =RequestMethod.POST)
+		public ModelAndView surePost(ModelAndView mv, BookingVO bvo) {
+			logger.info("시설소개페이지");
+			System.out.println(bvo);
+			bookingService.sure(bvo);
 			mv.setViewName("/guide/sure");
 			return mv;
 			
