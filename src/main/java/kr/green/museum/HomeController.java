@@ -281,6 +281,13 @@ public class HomeController {
 			return mv;
 			
 		}
+		@RequestMapping(value="/guide/boo", method =RequestMethod.POST)
+		public ModelAndView booPost(ModelAndView mv) {
+			logger.info("시설소개페이지");
+			mv.setViewName("/guide/boo");
+			return mv;
+			
+		}
 		
 		@RequestMapping(value="/academic/science", method =RequestMethod.GET)
 		public ModelAndView scienceGet(ModelAndView mv) {

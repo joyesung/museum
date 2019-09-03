@@ -4,6 +4,10 @@
     
 <head>
 <script type = "text/javascript" src="//code.jquery.com//jquery-3.4.1.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type = "text/javascript" src="<%=request.getContextPath()%>/resources/js/datepicker-ko.js"></script>
+
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		//더보기 또는 접기 버튼 클릭하면 
@@ -11,6 +15,81 @@
 			$('#divAllmenu').slideToggle();
 		})
 	})
+	
+	$(document).ready(function(){
+		$('#btnGrpappSave').click(function(){
+			return checkForm();
+		})
+		
+		
+	})
+	$(document).ready(function(){
+		$("#rsv_dt").datepicker({
+			minDate : 0
+			
+		})
+	})
+		
+	function checkForm() {
+		
+	    var rsv_cp_1 = document.resvdftapplVO.rsv_cp_1; 
+	    var rsv_cp_2 = document.resvdftapplVO.rsv_cp_2;
+	    var rsv_cp_3 = document.resvdftapplVO.rsv_cp_3;
+	    var rsv_pass = document.resvdftapplVO.rsv_pass;
+	    var rsv_organ = document.resvdftapplVO.rsv_organ;
+	    var rsv_dt = document.resvdftapplVO.rsv_dt;
+	    var chkAgreeInfo = document.resvdftapplVO.chkAgreeInfo;
+	    console.log(rsv_cp_1.value);
+	    // 휴대전화번호 입력 유무 체크
+	    if(rsv_cp_1.value == '' || (rsv_cp_1.value.length < 3)) { 
+	        window.alert("휴대전화번호를 입력하세요");
+	        document.resvdftapplVO.rsv_cp_1.focus();
+	        document.getElementById('rsv_cp_1').select();
+	        return false; // 휴대전화번호가 입력이 안되어 있다면 submint 이벤트를 중지
+	    }
+	    else if(rsv_cp_2.value == '' || (rsv_cp_2.value.length < 4)) {
+	        window.alert("휴대전화번호를 입력하세요");
+	        document.resvdftapplVO.rsv_cp_2.focus();
+	        document.getElementById('rsv_cp_2').select();
+	        return false; // 휴대전화번호가 입력이 안되어 있다면 submint 이벤트를 중지
+	    }else if(rsv_cp_3.value == '' || (rsv_cp_3.value.length < 4)) {
+	        window.alert("휴대전화번호를 입력하세요");
+	        document.resvdftapplVO.rsv_cp_3.focus();
+	        document.getElementById('rsv_cp_3').select();
+	        return false; // 휴대전화번호가 입력이 안되어 있다면 submint 이벤트를 중지
+	    }  
+	    // 암호 입력 유무 체크
+		if(document.resvdftapplVO.rsv_pass.value == ''){
+	    	window.alert("비밀번호를 입력하세요.");
+	    	document.resvdftapplVO.rsv_pass.focus();
+	    	document.getElementById('rsv_pass').select();
+	        return false;   
+	    }
+		if(document.resvdftapplVO.rsv_organ.value == ''){
+	    	window.alert("단체명(학교명)을 입력하세요.");
+	    	document.resvdftapplVO.rsv_organ.focus();
+	    	document.getElementById('rsv_organ').select();
+	        return false; 	   
+		} 
+		if(document.resvdftapplVO.rsv_dt.value == ''){
+	    	window.alert("신청 날짜를 선택하세요.");
+	    	document.resvdftapplVO.rsv_dt.focus();
+	    	document.getElementById('rsv_dt').select();
+	        return false; 	   
+		}     
+		if(!$('#chkAgreeInfo').prop('checked')){
+			alert('개인정보 수집에 동의하세요.')
+			$('#chkAgreeInfo').select();
+			return false;
+		}
+	} 
+	
+
+	 
+
+	
+
+	
 </script>
  <style type="text/css">
  	body{
@@ -460,12 +539,12 @@
 				</ul>
 				
 			</li>
-		</ul>
+		</ul>  
 	</article>
 	<section id="body">
 		<h1 class="stitle">단체관람예약</h1>
 		<p class="page_info">국립고구려박물관에서는 단체관람 예약제를 시행하고 있습니다.</p>
-		<form id="resvdftapplVO" name="reqForm" method="post">
+		<form id="resvdftapplVO" name="resvdftapplVO" method="post" onsubmit="return checkForm();">
 			<section id="content">
 				<article id="detail_content">
 					<h2 class="depth2_title">단체관람 예약안내</h2>
@@ -503,15 +582,15 @@
 										<label for="reservation_date">신청일시</label>
 									</th>
 									<td>
-										2019년 8월 27일 11시
-										<input id="rsv_dt" name="rsv_dt" type="hidden" value="20190827">
-										<input id="rsv_seq" name="rsv_seq" type="hidden" value="3">
-									</td>
+										 
+										<input id="rsv_dt" name="rsv_dt" type="text"  onclick="$('#rsv_dt').datepicker('show');">    
+										<input id="rsv_seq" name="rsv_seq" type="hidden" value>
+									</td>     
 								</tr>
 								<tr>
 									<th scope="row">
 										<span class="point01">*</span>
-										<label for="rsv_num">신청자명</label>
+										<label for="rsv_num">아이디</label>
 									</th>
 									<td>
 										<input type="text" id="rsv_nm" name="rsv_nm" value="${user.id}" title="신청자명" readonly="true">
@@ -523,8 +602,8 @@
 										<label for="tel">연락처</label>
 									</th>
 									<td>
-										<input id="rsv_cp_1" name="rsv_cp_1" title="연락처 앞자리" class="txt_center" type="text" value size="4" maxlength="4">
-										<input id="rsv_cp_2" name="rsv_cp_2" title="연락처 가운데자리" class="txt_center" type="text" value size="4" maxlength="4">
+										<input id="rsv_cp_1" name="rsv_cp_1" title="연락처 앞자리" class="txt_center" type="text" value size="3" maxlength="3">-
+										<input id="rsv_cp_2" name="rsv_cp_2" title="연락처 가운데자리" class="txt_center" type="text" value size="4" maxlength="4">-
 										<input id="rsv_cp_3" name="rsv_cp_3" title="연락처 끝자리" class="txt_center" type="text" value size="4" maxlength="4">
 									</td>
 								</tr>
@@ -556,10 +635,7 @@
 											인솔자정보
 										</label>
 									</th>
-									<td>
-										<input type="checkbox" id="rsv_leadr">
-										<label for="rsv_leadr">신청자와 동일</label>
-										<br>
+									<td>   
 										<span class="rsv_leadr">
 											<label for="rsv_leadr_nm">성명</label>
 											:
@@ -596,7 +672,7 @@
 											- 거부권 및 불이익 : 이용자는 개인정보수집ㆍ이용을 거부할 수 있으며 미동의 시 서비스 이용이 제한됩니다.
 										 	<br>
 										 	<span>
-										 		<input name="chkAgreeInfo" id="chkAgreeInfo" type="checkbox" value="N">
+										 		<input name="chkAgreeInfo" id="chkAgreeInfo" type="checkbox" value>
 										 		<label for="chkAgreeInfo">동의합니다.</label>
 										 	</span>
 										</div>
@@ -608,12 +684,11 @@
 							<a href="<%=request.getContextPath()%>/guide/sure"><button type="button" id="btnGrpappSave" title="신청하기" class="btn_black">
 								신청하기
 							</button></a>
-							<button type="button" title="취소가기" class="btn_gray">
-								취소하기  
-							</button>
-							<button type="button" title="예약취소" class="btn_gray">
-								예약취소  
-							</button>
+							<a href="<%=request.getContextPath()%>/guide/reservation">
+								<button type="button" title="취소가기" class="btn_gray">
+									취소하기  
+								</button>
+							</a>
 						</div>
 					</fieldset>
 				</article>

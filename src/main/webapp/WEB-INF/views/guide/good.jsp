@@ -456,7 +456,7 @@
 					</div>
 				</article>	
 			</section>
-		</form>
+		</form> 
 	</section>
 </body>		
 		

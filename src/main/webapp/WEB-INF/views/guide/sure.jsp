@@ -469,7 +469,7 @@
 								<td class="letter_spacing"></td>
 							</tr>
 							<tr>
-								<th scope="row">신청자명</th>
+								<th scope="row">아이디</th>
 								<td>
 									<input id="rsv_id" name="rsv_id" type="hidden" value>
 								</td>

@@ -437,8 +437,8 @@
 									<legend>본인인증 절차</legend>
 									<div class="login_list">
 										<span>
-											<label for="rsv_nm">신청자명</label>
-											<input id="rsv_nm" name="rsv_nm" title="신청자명" type="text" value>
+											<label for="rsv_nm">아이디</label>
+											<input id="rsv_nm" name="rsv_nm" title="아이디" type="text" value>
 										</span>
 										<span>
 											<label for="userHp" class="boq" id="boq">연락처</label>
