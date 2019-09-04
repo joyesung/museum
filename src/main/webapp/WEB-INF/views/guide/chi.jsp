@@ -407,23 +407,26 @@
 								<tr>
 									<th scope="col">단체명(학교)</th>
 									<th scope="col">예약일시</th>
-									<th scope="col">상태</th>
+									<th scope="col">기타</th>
 								</tr>
 							</thead>
 							<tbody class="letter_spacing">
+								<c:forEach items="${list}" var="b">
 								<tr>
 									<td class="txt_left">
-										<a href="<%=request.getContextPath()%>/guide/good">목포대학교</a>	
+										<a href="<%=request.getContextPath()%>/guide/good">${b.boogroup}</a>	
 									</td>
-									<td></td>
-									<td class="txt_center"></td>
+									<td>${b.boodate}</td>
+									<td class="txt_center">기타</td>
 								</tr>
+								</c:forEach>
 							</tbody>
-						</table>
+						</table>  
 					</article>
 				</section>
 			</form>
 	</section>
+	
 </body>		
 		
  

@@ -39,8 +39,15 @@
 	    var rsv_organ = document.resvdftapplVO.rsv_organ;
 	    var rsv_dt = document.resvdftapplVO.rsv_dt;
 	    var chkAgreeInfo = document.resvdftapplVO.chkAgreeInfo;
+	    var rsv_num1 = document.resvdftapplVO.rsv_num1;
 	    console.log(rsv_cp_1.value);
 	    // 휴대전화번호 입력 유무 체크
+	    if(document.resvdftapplVO.rsv_dt.value == ''){
+	    	window.alert("신청 날짜를 선택하세요.");
+	    	document.resvdftapplVO.rsv_dt.focus();
+	    	document.getElementById('rsv_dt').select();
+	        return false; 	   
+		} 
 	    if(rsv_cp_1.value == '' || (rsv_cp_1.value.length < 3)) { 
 	        window.alert("휴대전화번호를 입력하세요");
 	        document.resvdftapplVO.rsv_cp_1.focus();
@@ -65,31 +72,28 @@
 	    	document.getElementById('rsv_pass').select();
 	        return false;   
 	    }
+		if(document.resvdftapplVO.rsv_num1.value == '' || document.resvdftapplVO.rsv_num1.value <= 0  ){
+	    	window.alert("신청 인원을 입력하세요.");      
+	    	document.resvdftapplVO.rsv_num1.focus();
+	    	document.getElementById('rsv_num1').select();  
+	        return false; 	   
+		} 
 		if(document.resvdftapplVO.rsv_organ.value == ''){
 	    	window.alert("단체명(학교명)을 입력하세요.");
 	    	document.resvdftapplVO.rsv_organ.focus();
 	    	document.getElementById('rsv_organ').select();
 	        return false; 	   
 		} 
-		if(document.resvdftapplVO.rsv_dt.value == ''){
-	    	window.alert("신청 날짜를 선택하세요.");
-	    	document.resvdftapplVO.rsv_dt.focus();
-	    	document.getElementById('rsv_dt').select();
-	        return false; 	   
-		}     
+		    
 		if(!$('#chkAgreeInfo').prop('checked')){
 			alert('개인정보 수집에 동의하세요.')
 			$('#chkAgreeInfo').select();
-			return false;
+			return false;  
 		}
-	} 
-	
-
-	 
-
-	
-
-	
+		
+		$('input[name=boophone]').val(rsv_cp_1.value+rsv_cp_2.value+rsv_cp_3.value)
+		$('input[name=booleadingphone]').val(rsv_leadr_cp_1.value+rsv_leadr_cp_2.value+rsv_leadr_cp_3.value)
+	}   
 </script>
  <style type="text/css">
  	body{
@@ -583,7 +587,7 @@
 									</th>
 									<td>
 										 
-										<input id="rsv_dt" name="${booking.boodate}" type="text"  onclick="$('#rsv_dt').datepicker('show');">    
+										<input id="rsv_dt" name="boodate" type="text"  onclick="$('#rsv_dt').datepicker('show');">    
 										<input id="rsv_seq" name="rsv_seq" type="hidden" value>
 									</td>     
 								</tr>
@@ -593,7 +597,7 @@
 										<label for="rsv_num">아이디</label>
 									</th>
 									<td>
-										<input type="text" id="rsv_nm" name="${user.id}" value="${user.id}" title="신청자명" readonly="true">
+										<input type="text" id="rsv_nm" name="booid" value="${user.id}" title="신청자명" readonly="true">
 									</td>
 								</tr>
 								<tr>
@@ -602,9 +606,10 @@
 										<label for="tel">연락처</label>
 									</th>
 									<td>
-										<input id="rsv_cp_1" name="${booking.boophone}" title="연락처 앞자리" class="txt_center" type="text" value size="3" maxlength="3">-
-										<input id="rsv_cp_2" name="${booking.boophone}" title="연락처 가운데자리" class="txt_center" type="text" value size="4" maxlength="4">-
-										<input id="rsv_cp_3" name="${booking.boophone}" title="연락처 끝자리" class="txt_center" type="text" value size="4" maxlength="4">
+										<input id="rsv_cp_1" name="boophones" title="연락처 앞자리" class="txt_center" type="text" value size="3" maxlength="3">-
+										<input id="rsv_cp_2" name="boophones" title="연락처 가운데자리" class="txt_center" type="text" value size="4" maxlength="4">-
+										<input id="rsv_cp_3" name="boophones" title="연락처 끝자리" class="txt_center" type="text" value size="4" maxlength="4">
+										<input name="boophone" type="hidden">
 									</td>
 								</tr>
 								<tr>
@@ -613,7 +618,29 @@
 										<label for="rsv_pass">비밀번호</label>
 									</th>
 									<td>
-										<input id="rsv_pass" name="${booking.boopass}" title="비밀번호" type="password" value="">
+										<input id="rsv_pass" name="boopass" title="비밀번호" type="password" value="">
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">
+										<span class="point01">*</span>
+										<label for="people_num">신청인원</label>
+									</th>
+									<td>
+										<input id="rsv_num1" name="personnel" title="신청인원" class="txt_center" value="0" type="text" size="4">
+										명
+										<br>
+										예약 인원 현황 :
+										<span class="letter_spacing">0 / 300</span>
+										명
+										<br>
+										1인 최소 신청인원 1명 / 최대 300명 신청가능합니다.
+										<br>
+										<input type="hidden" id="rsv_one_prs" name="rsv_one_prs" value="300">
+										<input type="hidden" id="applcnt" name="applcnt" value="0">
+										<input type="hidden" id="totavailcnt" name="totavailcnt" value="300">
+										<input type="hidden" id="waitcnt" name="waitcnt" value="0">
+										<input type="hidden" id="totwaitcnt" name="totwaitcnt" value="0">
 									</td>
 								</tr>
 								<tr>
@@ -626,7 +653,7 @@
 										</label>
 									</th>
 									<td>
-										<input id="rsv_organ" name="${booking.boogroup}" title="단체명(학교명)" type="text" value="">
+										<input id="rsv_organ" name="boogroup" title="단체명(학교명)" type="text" value="">
 									</td>
 								</tr>
 								<tr>
@@ -639,13 +666,14 @@
 										<span class="rsv_leadr">
 											<label for="rsv_leadr_nm">성명</label>
 											:
-											<input id="rsv_leadr_nm" name="${booking.booleading}" title="인솔자 성명" type="text" value="">
+											<input id="rsv_leadr_nm" name="booleading" title="인솔자 성명" type="text" value="">
 										</span>
 										<span class="rsv_leadr">
 											연락처 :
 											<input id="rsv_leadr_cp_1" name="rsv_leadr_cp_1" title="인솔자 연락처 앞자리" class="txt_center" type="text" value size="4" maxlength="4">
 											<input id="rsv_leadr_cp_2" name="rsv_leadr_cp_2" title="인솔자 연락처 가운데자리" class="txt_center" type="text" value size="4" maxlength="4">
 											<input id="rsv_leadr_cp_3" name="rsv_leadr_cp_3" title="인솔자 연락처 끝자리" class="txt_center" type="text" value size="4" maxlength="4">
+											<input name="booleadingphone" type="hidden">
 										</span>
 									</td>
 								</tr>
@@ -681,9 +709,9 @@
 							</tbody>
 						</table>
 						<div class="btn_area_center">
-							<a href="<%=request.getContextPath()%>/guide/sure"><button type="button" id="btnGrpappSave" title="신청하기" class="btn_black">
+							<button type="submit" id="btnGrpappSave" title="신청하기" class="btn_black">
 								신청하기
-							</button></a>
+							</button>
 							<a href="<%=request.getContextPath()%>/guide/reservation">
 								<button type="button" title="취소가기" class="btn_gray">
 									취소하기  

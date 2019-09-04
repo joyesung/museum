@@ -9,6 +9,7 @@ public class BookingVO {
 	private String booleading;		//예약한날짜
 	private String boophone;
 	private String boopass;//예약한단체명
+	private String booleadingphone;
 	public int getBoonum() {
 		return boonum;
 	}
@@ -39,11 +40,11 @@ public class BookingVO {
 	public void setBoogroup(String boogroup) {
 		this.boogroup = boogroup;
 	}
-	public String getLeading() {
+	public String getBooleading() {
 		return booleading;
 	}
-	public void setLeading(String leading) {
-		this.booleading = leading;
+	public void setBooleading(String booleading) {
+		this.booleading = booleading;
 	}
 	public String getBoophone() {
 		return boophone;
@@ -57,11 +58,18 @@ public class BookingVO {
 	public void setBoopass(String boopass) {
 		this.boopass = boopass;
 	}
+	public String getBooleadingphone() {
+		return booleadingphone;
+	}
+	public void setBooleadingphone(String booleadingphone) {
+		this.booleadingphone = booleadingphone;
+	}
 	@Override
 	public String toString() {
 		return "BookingVO [boonum=" + boonum + ", booid=" + booid + ", personnel=" + personnel + ", boodate=" + boodate
-				+ ", boogroup=" + boogroup + ", leading=" + booleading + ", boophone=" + boophone + ", boopass=" + boopass
-				+ "]";
+				+ ", boogroup=" + boogroup + ", booleading=" + booleading + ", boophone=" + boophone + ", boopass="
+				+ boopass + ", booleadingphone=" + booleadingphone + "]";
 	}
+	
 	
 }

@@ -287,9 +287,13 @@ public class HomeController {
 			
 		}
 		@RequestMapping(value="/guide/boo", method =RequestMethod.POST)
-		public ModelAndView booPost(ModelAndView mv) {
+		public ModelAndView booPost(ModelAndView mv,BookingVO bvo) {
 			logger.info("시설소개페이지");
-			mv.setViewName("/guide/boo");
+			System.out.println(bvo);
+			bookingService.sure(bvo);
+			int num = bookingService.getLastBook();
+			mv.addObject("num",num);
+			mv.setViewName("redirect:/guide/sure");
 			return mv; 
 			
 		}
@@ -358,21 +362,15 @@ public class HomeController {
 			
 		}
 		@RequestMapping(value="/guide/sure", method =RequestMethod.GET)
-		public ModelAndView sureGet(ModelAndView mv) {
+		public ModelAndView sureGet(ModelAndView mv, Integer num) {
 			logger.info("시설소개페이지");
+			BookingVO bvo = bookingService.getBooking(num);
+			mv.addObject("booking",bvo);
 			mv.setViewName("/guide/sure");
 			return mv;
 			
 		}
-		@RequestMapping(value="/guide/sure", method =RequestMethod.POST)
-		public ModelAndView surePost(ModelAndView mv, BookingVO bvo) {
-			logger.info("시설소개페이지");
-			System.out.println(bvo);
-			bookingService.sure(bvo);
-			mv.setViewName("/guide/sure");
-			return mv;
-			
-		}
+		
 		@RequestMapping(value="/guide/leng", method =RequestMethod.GET)
 		public ModelAndView lengGet(ModelAndView mv) {
 			logger.info("시설소개페이지");
@@ -380,12 +378,26 @@ public class HomeController {
 			return mv;
 			
 		}
-		@RequestMapping(value="/guide/chi", method =RequestMethod.GET)
-		public ModelAndView chiGet(ModelAndView mv) {
+		@RequestMapping(value="/guide/leng", method =RequestMethod.POST)
+		public ModelAndView lengPost(ModelAndView mv,BookingVO bvo) {
 			logger.info("시설소개페이지");
-			mv.setViewName("/guide/chi");
+			System.out.println(bvo);
+			bookingService.chi(bvo);
+			String booid = bookingService.getbooid();
+			mv.addObject("booid",booid);
+			mv.setViewName("/guide/leng");
+			mv.setViewName("redirect:/guide/chi");
 			return mv;
 			
+		}
+		
+		@RequestMapping(value="/guide/chi", method =RequestMethod.GET)
+		public ModelAndView chiGet(ModelAndView mv,BookingVO bvo) {
+			ArrayList<BookingVO> list = bookingService.chi(bvo);
+			mv.addObject("list",list);
+			mv.setViewName("/guide/chi");
+			System.out.println(list);
+			return mv;
 		}
 		@RequestMapping(value="/guide/good", method =RequestMethod.GET)
 		public ModelAndView goodGet(ModelAndView mv) {

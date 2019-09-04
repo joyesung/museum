@@ -10,6 +10,12 @@
 		$('.fas.fa-bars').click(function(){
 			$('#divAllmenu').slideToggle();
 		})
+		$('#resvusermanVO').submit(function(){
+			var t1 = $('#rsv_cp_1').val();
+			var t2 = $('#rsv_cp_2').val();
+			var t3 = $('#rsv_cp_3').val();
+			$('input[name=boophone]').val(t1+t2+t3)
+		})
 	})
 </script>
  <style type="text/css">
@@ -418,7 +424,7 @@
 		<h1 class="stitle">예약정보조회</h1>
 		<p class="page_info"></p>
 		<div class="float_wrap"></div>
-		<form id="resvusermanVO" name="reqForm" method="post">
+		<form id="resvusermanVO" name="reqForm" method="get" action="<%=request.getContextPath()%>/guide/chi">
 			<section id="content">
 				<article id="detail_content">
 					<div class="login_box">
@@ -438,7 +444,7 @@
 									<div class="login_list">
 										<span>
 											<label for="rsv_nm">아이디</label>
-											<input id="rsv_nm" name="rsv_nm" title="아이디" type="text" value>
+											<input id="rsv_nm" name="booid" title="아이디" type="text" value>
 										</span>
 										<span>
 											<label for="userHp" class="boq" id="boq">연락처</label>
@@ -450,16 +456,17 @@
 											-
 											<input id="rsv_cp_3" name="rsv_cp_3" title="연락처 뒷자리"
 											style="width:10%" maxlength="4" type="text" value>
+											<input type="hidden" name="boophone">
 										</span>
 										<span>
 											<label for="rsv_pass">비밀번호</label>
-											<input id="rsv_pass" name="rsv_pass" title="비밀번호" maxlength="15"
+											<input id="rsv_pass" name="boopass" title="비밀번호" maxlength="15"
 											type="password" value>
 										</span> 
 									</div>
 									<div class="btn_login">
-										<a href="<%=request.getContextPath()%>/guide/chi" class="ck">
-											<button type="button" id="btnSiteLogin" class="btn_black">
+										<%-- <a href="<%=request.getContextPath()%>/guide/chi" class="ck"> --%>
+											<button type="submit" id="btnSiteLogin" class="btn_black">
 											예약정보조회</button>
 										</a>
 									</div>

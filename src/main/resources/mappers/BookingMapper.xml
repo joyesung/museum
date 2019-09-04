@@ -4,9 +4,18 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.green.museum.dao.BookingDAO">
   <insert id="insertsure">
-  	insert into booking(boodate,booid,boophone,personnel,boogroup,booleading)
-  		values(#{booking.boodate},#{booking.booid},#{booking.boophone},#{booking.personnel}, #{booking.boogroup},#{booking.booleading})
+  	insert into booking(boodate,booid,boophone,personnel,boogroup,booleading,boopass, booleadingphone)
+  		values(#{booking.boodate},#{booking.booid},#{booking.boophone},#{booking.personnel}, #{booking.boogroup},#{booking.booleading},#{booking.boopass},#{booking.booleadingphone})
   </insert>
+  <select id="selectMaxboonum" resultType="int">
+  	SELECT max(boonum) FROM booking
+  </select>
+  <select id="selectBooking" resultType="kr.green.museum.vo.BookingVO">
+  	select * from booking where boonum = #{num}
+  </select>
   
-
+  <select id="selectListBooking" resultType="kr.green.museum.vo.BookingVO">
+  	select * from booking where booid = #{booking.booid} and boophone = #{booking.boophone} and boopass = #{booking.boopass}
+  </select>
+  
 </mapper>

@@ -465,33 +465,33 @@
 						</colgroup>
 						<tbody>
 							<tr>
-								<th scope="row">${booking.boodate}</th>
-								<td class="letter_spacing"></td>
+								<th scope="row">신청일시</th>
+								<td class="letter_spacing">${booking.boodate}</td>
 							</tr>
 							<tr>
-								<th scope="row">${booking.booid}</th>
+								<th scope="row">아이디</th>
 								<td>
-									<input id="rsv_id" name="rsv_id" type="hidden" value>
+									${booking.booid}
 								</td>
 							</tr>
 							<tr>
-								<th scope="row">${booking.boophone}</th>
-								<td class="letter_spacing"></td>
+								<th scope="row">연락처</th>
+								<td class="letter_spacing">${booking.boophone}</td>
 							</tr>
 							<tr>
-								<th scope="row">${booking.personnel}</th>
-								<td class="letter_spacing"></td>
+								<th scope="row">신청인원</th>
+								<td class="letter_spacing">${booking.personnel}</td>
 							</tr>
 							<tr>
-								<th scope="row">${booking.boogroup}</th>
-								<td class="letter_spacing"></td>
+								<th scope="row">단체명</th>
+								<td class="letter_spacing">${booking.boogroup}</td>
 							</tr>
 							<tr>
-								<th scope="row">${booking.booleading}</th>
+								<th scope="row">인솔자 정보확인</th>
 								<td>
-									<span style="display: inline-block;width:55px">성명 :</span>
+									<span style="display: inline-block;width:55px">성명 : ${booking.booleading}</span>
 									<br>
-									<span style="display: inline-block;width:55px">연락처 :</span>
+									<span style="display: inline-block;width:55px">연락처 :${booking.booleadingphone}</span>
 								</td>
 							</tr>
 						</tbody>
