@@ -3,6 +3,7 @@
     pageEncoding="UTF-8"%>
     
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <script type = "text/javascript" src="//code.jquery.com//jquery-3.4.1.js"></script>
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -10,7 +11,27 @@
 		$('.fas.fa-bars').click(function(){
 			$('#divAllmenu').slideToggle();
 		})
+		showSlides();
 	})
+	
+	var slideIndex = 0;
+	
+	function showSlides() {
+	  var i;
+	  var slides = document.getElementsByClassName("mySlides");
+	  var dots = document.getElementsByClassName("dot");
+	  for (i = 0; i < slides.length; i++) {
+	    slides[i].style.display = "none";  
+	  }
+	  slideIndex++;
+	  if (slideIndex > slides.length) {slideIndex = 1}    
+	  for (i = 0; i < dots.length; i++) {
+	    dots[i].className = dots[i].className.replace(" active", "");
+	  }
+	  slides[slideIndex-1].style.display = "block";  
+	  dots[slideIndex-1].className += " active";
+	  setTimeout(showSlides, 2500); // Change image every 2 seconds   
+	}
 </script>
  <style type="text/css">
  	body{
@@ -114,19 +135,77 @@
 	#divAllmenu{
 		display: none;
 	}
-	.img_contents{
-		text-align:center;
+	* {box-sizing: border-box;}
+	body {font-family: Verdana, sans-serif;}
+	.mySlides {display: none;}
+	img {vertical-align: middle;}
+
+	/* Slideshow container */
+	.slideshow-container {
+	  max-width: 1000px;
+	  position: relative;
+	  margin: auto;
 	}
-	.img{
-		width:400px;
-		height:400px;
-		border:1px solid black;
-		display:inline-block;
-		margin:20px 20px 20px 0;		
-	}  
-	.img>img{
-		width:400px;
-		height:400px;
+	
+	/* Caption text */
+	.text {
+	  color: #f2f2f2;
+	  font-size: 15px;
+	  padding: 8px 12px;
+	  position: absolute;
+	  bottom: 8px;
+	  width: 100%;
+	  text-align: center;
+	}
+	
+	/* Number text (1/3 etc) */
+	.numbertext {
+	  color: #f2f2f2;
+	  font-size: 12px;
+	  padding: 8px 12px;
+	  position: absolute;
+	  top: 0;
+	}
+	
+	/* The dots/bullets/indicators */
+	.dot {
+	  height: 15px;
+	  width: 15px;
+	  margin: 0 2px;
+	  background-color: #bbb;
+	  border-radius: 50%;
+	  display: inline-block;
+	  transition: background-color 0.6s ease;
+	}
+	
+	.active {
+	  background-color: #717171;
+	}
+	
+	/* Fading animation */
+	.fade {
+	  -webkit-animation-name: fade;
+	  -webkit-animation-duration: 1.5s;
+	  animation-name: fade;
+	  animation-duration: 1.5s;
+	}
+	
+	@-webkit-keyframes fade {
+	  from {opacity: .4} 
+	  to {opacity: 1}
+	}
+	
+	@keyframes fade {
+	  from {opacity: .4} 
+	  to {opacity: 1}
+	}
+
+	/* On smaller screens, decrease text size */
+	@media only screen and (max-width: 300px) {
+	  .text {font-size: 11px}
+	}
+	.mySlides img{
+		width: 1500px;      
 	}
  </style>
  </head>
@@ -227,20 +306,31 @@
 			</li>
 		</ul>
 	</article>
-	<div class="container img_contents">
-		<div class="img">
-			<img src="<%=request.getContextPath()%>/resources/img/test1.jpg">	
+		<div class="slideshow-container">
+			<div class="mySlides fade">
+			  <div class="numbertext">1 / 3</div>
+			  <img src="<%=request.getContextPath()%>/resources/img/korea/844.jpg" style="width:100%;">
+			  <div class="text">Caption Text</div>
+			</div>
+			
+			<div class="mySlides fade">
+			  <div class="numbertext">2 / 3</div>
+			  <img src="<%=request.getContextPath()%>/resources/img/korea/789789.jpg" style="width:100%;">
+			  <div class="text">Caption Two</div>
+			</div>
+			   
+			<div class="mySlides fade">
+			  <div class="numbertext">3 / 3</div>
+			  <img src="<%=request.getContextPath()%>/resources/img/korea/5722.jpg" style="width:100%;">
+			  <div class="text">Caption Three</div>
+			</div>
 		</div>
-		<div class="img">
-			<img src="<%=request.getContextPath()%>/resources/img/test2.jpg">	
+			<br>
+		<div style="text-align:center">
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
+		  <span class="dot"></span> 
 		</div>
-		<div class="img">	
-			<img src="<%=request.getContextPath()%>/resources/img/test3.jpg">
-		</div>
-		<div class="img">	
-			<img src="<%=request.getContextPath()%>/resources/img/test4.jpg">
-		</div>
-	</div>
 </body>		
 		
  
