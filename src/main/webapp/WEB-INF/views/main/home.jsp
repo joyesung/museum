@@ -207,14 +207,26 @@
 	.mySlides img{
 		width: 1500px;      
 	}
+	.iframe {
+	    width: 100%;
+	    margin-top: 20px;
+	    padding: 35px;
+	    border: solid 3px #dfdfdf;
+	    box-sizing: border-box;
+	    text-align: center;
+	 }
+	 .iframe iframe {
+	    width: 100%;
+	    margin: auto;
+	 }  
  </style>
  </head>
  <body>
 	<div>
 		<div class="logowrap">
 			<nav class="mune-list">
-				<ul id="gnavigation">
-					<li> <a href="<%=request.getContextPath()%>/main/home">국립고구려박물관</a></li>    
+				<ul id="gnavigation">          
+					<li> <a href="<%=request.getContextPath()%>/">국립고구려박물관</a></li>    
 					<li> <a href="<%=request.getContextPath()%>/guide/gu">안내</a></li>
 					<li> <a href="<%=request.getContextPath()%>/exhibition/special">전시</a></li>
 					<li><a href="<%=request.getContextPath()%>/relic/search">유물/학술</a></li>
@@ -331,6 +343,11 @@
 		  <span class="dot"></span> 
 		  <span class="dot"></span> 
 		</div>
-</body>		
-		
+		<div class="iframe" style="opacity: 1;">
+			<iframe width="516" height="315" title="박물관 관람예절 동영상" src="https://www.youtube.com/embed/y5G_nsunwIg" frameborder="0" scrolling="auto" allowfullscreen allow="autoplay; encrypted-media">
+				</iframe>												
+				
+		</div>
+</body>		    
+		  
  

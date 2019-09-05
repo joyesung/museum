@@ -342,7 +342,7 @@
 			</div>
 		</div>
 	
-	</article>
-	
+	</article>  
+	 
 
 </body>
