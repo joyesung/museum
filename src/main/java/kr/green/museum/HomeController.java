@@ -406,5 +406,12 @@ public class HomeController {
 			return mv;
 			
 		}
+		@RequestMapping(value="/education/look", method =RequestMethod.GET)
+		public ModelAndView lookGet(ModelAndView mv) {
+			logger.info("시설소개페이지");
+			mv.setViewName("/education/look");
+			return mv;
+			
+		}
 }
 

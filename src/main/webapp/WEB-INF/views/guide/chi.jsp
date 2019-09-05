@@ -287,13 +287,13 @@
 	<div>
 		<div class="logowrap">
 			<nav class="mune-list">
-				<ul id="gnavigation">
-					<li> <a href="<%=request.getContextPath()%>/main/home">국립고구려박물관</a></li>    
+				<ul id="gnavigation">          
+					<li> <a href="<%=request.getContextPath()%>/">국립고구려박물관</a></li>    
 					<li> <a href="<%=request.getContextPath()%>/guide/gu">안내</a></li>
 					<li> <a href="<%=request.getContextPath()%>/exhibition/special">전시</a></li>
-					<li><a href="<%=request.getContextPath()%>/relic/search">유물/학술</a></li>
+					<li> <a href="<%=request.getContextPath()%>/relic/search">유물/학술</a></li>
 					<li> <a href="<%=request.getContextPath()%>/board/list">게시판</a></li>
-					<li>교육</li>
+					<li> <a href="<%=request.getContextPath()%>/education/look">교육</a></li>
 					<li> 
 					<i class="fas fa-bars"></i>
 					<span class="hidden">전체메뉴보기</span>
@@ -367,13 +367,10 @@
 				</ul>
 			</li>
 			<li id="liAllLnb5" class="submenu">
-				<a>교육</a>
+				<a href="<%=request.getContextPath()%>/education/look">교육</a>
 				<ul class="depth2" id="ulAllSubmeuLv2_5">
 				<li>
-					<a>교육프로그램</a>
-				</li>
-				<li>
-					<a>교육자료</a>
+					<a href="<%=request.getContextPath()%>/education/look">교육동영상</a>
 				</li>
 				</ul>
 				
