@@ -226,7 +226,7 @@
 		<div class="logowrap">
 			<nav class="mune-list">
 				<ul id="gnavigation">          
-					<li> <a href="<%=request.getContextPath()%>/">국립고구려박물관</a></li>    
+					<li> <a href="<%=request.getContextPath()%>"/">국립고구려박물관</a></li>    
 					<li> <a href="<%=request.getContextPath()%>/guide/gu">안내</a></li>
 					<li> <a href="<%=request.getContextPath()%>/exhibition/special">전시</a></li>
 					<li> <a href="<%=request.getContextPath()%>/relic/search">유물/학술</a></li>

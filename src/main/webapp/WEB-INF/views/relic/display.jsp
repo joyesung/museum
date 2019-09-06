@@ -556,10 +556,10 @@ $(document).ready(function(){
 			<article id="detail_content">
 				<ul class="tab_menu">
 					<li>
-						<a class="link01">전시도록</a>
+						<a class="link01" href="<%=request.getContextPath()%>/relic/published">전시도록</a>
 					</li>
 					<li>
-						<a class="link02">발굴보고서</a>
+						<a class="link02" href="<%=request.getContextPath()%>/relic/hao">발굴보고서</a>
 					</li>
 					<li>
 						<a class="link03">기타</a>
@@ -594,16 +594,16 @@ $(document).ready(function(){
 							<span>페이지수</span>	
 							<span class="txt">${board.page} page</span>
 						</li>
-						<li>
+						<li> 
 							<span>가격</span>	
 							<span class="txt">${board.price} 원</span>
 						</li>
 					</ul>
 				</div>
 				<div class="btn_area">
-					<button class="btn_black" id="btnBoardList" type="button">
-						<a href="<%=request.getContextPath()%>/relic/published">목록</a>
-					</button>   
+				<a href="<%=request.getContextPath()%>/relic/published">
+					<button class="btn_black" id="btnBoardList" type="button">목록</button>
+				</a>   
 				</div>
 			</section>
 </body>

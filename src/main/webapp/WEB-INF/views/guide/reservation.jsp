@@ -10,6 +10,13 @@
 		$('.fas.fa-bars').click(function(){
 			$('#divAllmenu').slideToggle();
 		})
+		$('.btn_possible').click(function(){
+			var id = $('#userId').val();
+			if(id == ''){
+				alert('로그인을 하세요.');
+				$(this).parent().attr('href','http://localhost:8080/museum/signin');
+			}
+		})
 	})
 </script>
  <style type="text/css">
@@ -382,6 +389,7 @@
  </style>
  </head>
  <body>
+ 	<input type="hidden" value="${user.id}" id="userId">
 	<div>
 		<div class="logowrap">
 			<nav class="mune-list">

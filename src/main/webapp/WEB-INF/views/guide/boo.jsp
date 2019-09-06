@@ -626,12 +626,7 @@
 									<td>
 										<input id="rsv_num1" name="personnel" title="신청인원" class="txt_center" value="0" type="text" size="4">
 										명
-										<br>
-										예약 인원 현황 :
-										<span class="letter_spacing">0 / 300</span>
-										명
-										<br>
-										1인 최소 신청인원 1명 / 최대 300명 신청가능합니다.
+										  
 										<br>
 										<input type="hidden" id="rsv_one_prs" name="rsv_one_prs" value="300">
 										<input type="hidden" id="applcnt" name="applcnt" value="0">

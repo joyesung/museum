@@ -386,8 +386,8 @@
 					<article id="detail_content">
 						<ul class="tab_menu menuCount5">
 							<li id="liGbtabList01" class="on">
-								<a href="<%=request.getContextPath()%>/guide/sure">단체관람</a>
-							</li>
+								<a href="<%=request.getContextPath()%>/guide/boo">단체관람</a>
+							</li>  
 						</ul>
 						<table class="tstyle_list">
 							<caption>
@@ -411,12 +411,12 @@
 								<c:forEach items="${list}" var="b">
 								<tr>
 									<td class="txt_left">
-										<a href="<%=request.getContextPath()%>/guide/good">${b.boogroup}</a>	
-									</td>
+										<a href="<%=request.getContextPath()%>/guide/sure?num=${b.boonum}">${b.boogroup}</a>	
+									</td>     
 									<td>${b.boodate}</td>
 									<td class="txt_center">기타</td>
 								</tr>
-								</c:forEach>
+								</c:forEach>  
 							</tbody>
 						</table>  
 					</article>

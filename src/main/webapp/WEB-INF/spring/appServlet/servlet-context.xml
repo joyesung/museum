@@ -36,8 +36,10 @@
         	<mapping path="/signin"/>
         	<beans:ref bean="loginInterceptor"/>
     	</interceptor>
+    	
     	<interceptor>
-	        <mapping path="/authInterceptor"/><!-- board가 들어가는 모든 애들은 회원들만 접근할게 있게함 -->
+	        <mapping path="/authInterceptor"/>
+	        <mapping path="/guide/boo"/><!-- board가 들어가는 모든 애들은 회원들만 접근할게 있게함 -->
 	        <beans:ref bean="authInterceptor"/>
 	        <!-- 로그인한 회원만 접근할 수 있는 URI -->
 		</interceptor>

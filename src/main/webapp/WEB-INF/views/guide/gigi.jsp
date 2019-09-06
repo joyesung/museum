@@ -474,9 +474,11 @@
 							<li>전시실 해설을 원하시는 분은 정해진 해설 시간에 맞춰 예약없이 상설전시관 중앙홀에 오시면 참여 가능합니다.</li>
 						</ul>
 						<p class="float_right">
-						<a class="btn_yellow" href="#">안내바로가기</a>
+						<a class="btn_yellow" href="<%=request.getContextPath()%>/guide/description">
+							<button type="button">안내바로가기</button>  
+						</a>
 						</p>
-					</div>
+					</div>   
 					<h2 class="depth2_title02" style="opacity: 1;">단체관람 예약실시</h2> 
 					<div class="link_wrap" style="opacity: 1">
 						<ul class="lstyle_box">
@@ -491,7 +493,9 @@
 							</li>
 						</ul>
 						<p class="float_right">
-						<a class="btn_yellow" href="#">단체예약바로가기</a>
+						<a class="btn_yellow" href="<%=request.getContextPath()%>/guide/reservation">
+							<button type="button">단체예약바로가기</button>
+						</a>
 						</p>
 					</div>
 					<h2 class="depth2_title02" style="opacity: 1;">기타문의</h2>
