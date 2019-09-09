@@ -298,6 +298,12 @@
     	color: #da3d00;  
 
 	}
+	.korea {
+	 	color: black;     
+	}
+	.korea1 {
+	 	color: white;    
+	}  
  </style>
  </head>
 <body>
@@ -305,12 +311,12 @@
 		<div class="logowrap">
 			<nav class="mune-list">
 				<ul id="gnavigation">          
-					<li> <a href="<%=request.getContextPath()%>/">국립고구려박물관</a></li>    
-					<li> <a href="<%=request.getContextPath()%>/guide/gu">안내</a></li>
-					<li> <a href="<%=request.getContextPath()%>/exhibition/special">전시</a></li>
-					<li> <a href="<%=request.getContextPath()%>/relic/search">유물/학술</a></li>
-					<li> <a href="<%=request.getContextPath()%>/board/list">게시판</a></li>
-					<li> <a href="<%=request.getContextPath()%>/education/look">교육</a></li>
+					<li> <a class="korea" href="<%=request.getContextPath()%>"/">국립고구려박물관</a></li>    
+					<li> <a class="korea" href="<%=request.getContextPath()%>/guide/gu">안내</a></li>
+					<li> <a class="korea" href="<%=request.getContextPath()%>/exhibition/special">전시</a></li>
+					<li> <a class="korea" href="<%=request.getContextPath()%>/relic/search">유물/학술</a></li>
+					<li> <a class="korea" href="<%=request.getContextPath()%>/board/list">게시판</a></li>
+					<li> <a class="korea" href="<%=request.getContextPath()%>/education/look">교육</a></li>
 					<li> 
 					<i class="fas fa-bars"></i>
 					<span class="hidden">전체메뉴보기</span>
@@ -323,71 +329,71 @@
 		<ul id="gnavigation_all" class="container">
 			<li id="allmenuli" style="display: none;"></li>
 			<li id="liAllLnb1" class="submenu">
-				<a href="<%=request.getContextPath()%>/guide/gu">안내</a>
+				<a class="korea" href="<%=request.getContextPath()%>/guide/gu">안내</a>
 				<ul class="depth2" id="ulAllSubmeuLv2_1">
 					<li>
-						<a href="<%=request.getContextPath()%>/guide/gu">관람시유의사항</a>
+						<a class="korea1" href="<%=request.getContextPath()%>/guide/gu">관람시유의사항</a>
 					</li>
 					<li>
-						<a href="<%=request.getContextPath()%>/guide/gigi">관람안내</a>
+						<a class="korea1" href="<%=request.getContextPath()%>/guide/gigi">관람안내</a>
 					</li>
 					<li>
-						<a href="<%=request.getContextPath()%>/guide/reservation">단체관람예약</a>
+						<a class="korea1" href="<%=request.getContextPath()%>/guide/reservation">단체관람예약</a>
 					</li>
 					<li>
-						<a href="<%=request.getContextPath()%>/guide/description">전시해설안내</a>
+						<a class="korea1" href="<%=request.getContextPath()%>/guide/description">전시해설안내</a>
 					</li>
 					<li>
-						<a href="<%=request.getContextPath()%>/guide/facility">시설안내</a>
+						<a class="korea1" href="<%=request.getContextPath()%>/guide/facility">시설안내</a>
 					</li>
 					<li>
-						<a href="<%=request.getContextPath()%>/guide/introduction">박물관소개</a>
+						<a class="korea1" href="<%=request.getContextPath()%>/guide/introduction">박물관소개</a>
 					</li>
 					<li>
-						<a href="<%=request.getContextPath()%>/guide/directions">오시는길</a>
+						<a class="korea1" href="<%=request.getContextPath()%>/guide/directions">오시는길</a>
 					</li>
 					<li>
-						<a href="<%=request.getContextPath()%>/guide/leng">예약정보조회</a>
+						<a class="korea1" href="<%=request.getContextPath()%>/guide/leng">예약정보조회</a>
 					</li>
 				</ul>
 			</li>
 			<li id="liAllLnb2" class="submenu">
-				<a href="<%=request.getContextPath()%>/exhibition/special">전시</a>
+				<a class="korea" href="<%=request.getContextPath()%>/exhibition/special">전시</a>
 				<ul class="depth2" id="ulAllSubmeuLv2_2">
 				<li>
-					<a href="<%=request.getContextPath()%>/exhibition/special">특별전시</a>
+					<a class="korea1" href="<%=request.getContextPath()%>/exhibition/special">특별전시</a>
 				</li>
 				<li>
-					<a href="<%=request.getContextPath()%>/exhibition/permanent">상설전시</a>
+					<a class="korea1" href="<%=request.getContextPath()%>/exhibition/permanent">상설전시</a>
 				</ul>	
 			</li>
 			<li id="liAllLnb3" class="submenu">
-				<a href="<%=request.getContextPath()%>/relic/search">유물/학술</a>
+				<a class="korea" href="<%=request.getContextPath()%>/relic/search">유물/학술</a>
 				<ul class="depth2" id="ulAllSubmeuLv2_3">
 				<li>
-					<a href="<%=request.getContextPath()%>/relic/search">소장품검색</a>
+					<a class="korea1" href="<%=request.getContextPath()%>/relic/search">소장품검색</a>
 				</li>
 				<li>
-					<a href="<%=request.getContextPath()%>/relic/published">발간자료</a>
+					<a class="korea1" href="<%=request.getContextPath()%>/relic/published">발간자료</a>
 				</li>
 				<li>
-					<a href="<%=request.getContextPath()%>/academic/science">보존과학</a>
+					<a class="korea1" href="<%=request.getContextPath()%>/academic/science">보존과학</a>
 				</li>
 				</ul>	
 			</li>
 			<li id="liAllLnb4" class="submenu">
-				<a href="<%=request.getContextPath()%>/board/list">게시판</a>
+				<a class="korea" href="<%=request.getContextPath()%>/board/list">게시판</a>
 				<ul class="depth2" id="ulAllSubmeuLv2_4">
 				<li>
-					<a href="<%=request.getContextPath()%>/board/list">공지사항/게시판</a>
+					<a class="korea1" href="<%=request.getContextPath()%>/board/list">공지사항/게시판</a>
 				</li>
 				</ul>
 			</li>
 			<li id="liAllLnb5" class="submenu">
-				<a href="<%=request.getContextPath()%>/education/look">교육</a>
+				<a class="korea" href="<%=request.getContextPath()%>/education/look">교육</a>
 				<ul class="depth2" id="ulAllSubmeuLv2_5">
 				<li>
-					<a href="<%=request.getContextPath()%>/education/look">교육동영상</a>
+					<a class="korea1" href="<%=request.getContextPath()%>/education/look">교육동영상</a>
 				</li>
 				</ul>
 				
